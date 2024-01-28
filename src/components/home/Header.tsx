@@ -59,7 +59,7 @@ const Header = () => {
             onClick={() => push("/")}
           >
             <p>c</p>
-            <p>k</p>
+            <p>p</p>
             <p className="group-hover:animate-pulse">.</p>
           </div>
 

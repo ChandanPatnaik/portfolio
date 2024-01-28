@@ -49,7 +49,7 @@ const ContactDetails = () => {
         <p>‍If you need to put a project on the move, let’s work on it!</p>
       </div>
 
-      <div className="text-milk tracking-wide hover:tracking-widest common-transition">
+      <div className="text-milk tracking-wide hover:tracking-widest w-fit common-transition">
         chandanpatnaik81@gmail.com
       </div>
     </div>
@@ -167,7 +167,7 @@ const ContactUsForm = () => {
             <div className="flex flex-col">
               <button
                 type="submit"
-                className="w-full cursor-none col-span-full  py-2 bg-blue-700 font-semibold text-white rounded-sm"
+                className="w-full cursor-none col-span-full  py-2 bg-light-yellow font-semibold text-white rounded-sm"
               >
                 Submit Form
               </button>

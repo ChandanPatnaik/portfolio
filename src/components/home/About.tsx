@@ -256,6 +256,8 @@ const AboutBlock = () => {
             <p className="">{`'Redis',`}</p>
           </div>
           <div className="flex items-center gap-2 flex-wrap text-green-400">
+            <p className="">{`'Git',`}</p>
+            <p className="">{`'GitHub',`}</p>
             <p className="">{`'S3',`}</p>
             <p className="">{`'EC2',`}</p>
             <p className="animate-pulse-custom mx-2 bg-milk w-0.5 h-4"></p>
