@@ -78,3 +78,22 @@ body {
     0.1
   ); /* Adjust the background color and opacity as needed */
 }
+
+/* --------------------------------------------React Slick Slider Styles---------------------------------------- */
+
+.slider-container {
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
+  transition: transform 0.3s ease;
+}
+
+.slider-item {
+  min-width: 300px;
+}
+
+.slider-item.active {
+  flex-shrink: 0;
+}

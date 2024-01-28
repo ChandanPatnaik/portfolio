@@ -22,7 +22,7 @@ const Header = () => {
       },
       {
         label: "Contact",
-        link: "",
+        link: "#contact",
       },
       {
         label: "Resume",
