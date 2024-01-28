@@ -28,23 +28,26 @@ export default Hero;
 
 const TextArea = () => {
   return (
-    <div className="flex flex-col gap-8 w-full h-fit relative text-3xl md:text-4xl lg:text-5xl font-semibold pl-6 md:pl-8">
+    <div className="flex flex-col gap-8 w-full h-fit relative text-3xl md:text-4xl lg:text-6xl font-semibold pl-6 md:pl-8">
       <TimeLine />
       <div className="text-base font-light text-white/40 tracking-wide">
         {`Start />`}
       </div>
-      <div className="flex flex-col md:gap-3 lg:gap-6">
-        <div className="text-milk">
-          Hi, my name is
+      <div className="flex flex-col md:gap-3 lg:gap-4">
+        <span className="text-lg text-light-sky"> Hi, my name is</span>
+        <div className="text-light-sky">
           <span className="text-light-yellow"> Chandan Patnaik</span> <br />
         </div>
-        <div className="text-milk">
-          i <span className="italic font-normal">design</span> and develop{" "}
+        <div className="text-light-sky">
+          I <span className="italic font-normal">design</span> & develop{" "}
           <HeroAnimatedText />
         </div>
       </div>
-      <div className="text-xl md:text-2xl font-light text-white/50">
-        Let me show You...
+      <div className="text-base md:text- font-light text-white/50">
+        I am a MERN stack developer with a focus on crafting outstanding digital
+        experiences. <br /> Currently, I am dedicated to developing accessible
+        and human-centered products,
+        <br /> contributing to advancements in the tech industry.
       </div>
       <div className="overflow-hidden">
         <HeroSlider />

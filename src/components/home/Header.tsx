@@ -71,9 +71,12 @@ const Header = () => {
           </button>
 
           <ul className="hidden md:flex items-center gap-12 text-sm">
-            {navigationData.map((curLabel) => (
+            {navigationData.map((curLabel, i) => (
               <Link href={curLabel.link} key={curLabel.label}>
                 <li className="tracking-wider hover:text-light-yellow common-transition">
+                  <span className="font-[Roboto]">
+                    0<span>{i + 1}.</span>
+                  </span>{" "}
                   {curLabel.label}
                 </li>
               </Link>
