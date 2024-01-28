@@ -14,7 +14,6 @@ const HeroAnimatedText = () => {
         2000,
       ]}
       speed={40}
-      style={{ fontSize: "3rem" }}
       repeat={Infinity}
       cursor={false}
     />

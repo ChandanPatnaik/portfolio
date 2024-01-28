@@ -41,7 +41,7 @@ const Header = () => {
           <p>k</p>
           <p>.</p>
         </div>
-        <ul className="flex items-center gap-12 text-sm">
+        <ul className="hidden md:flex items-center gap-12 text-sm">
           {navigationData.map((curLabel) => (
             <li
               key={curLabel.label}

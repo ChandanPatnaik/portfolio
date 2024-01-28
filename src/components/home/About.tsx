@@ -2,7 +2,7 @@
 const About = () => {
   return (
     <section className="w-full flex items-center justify-center overflow-hidden bg-dark-blue">
-      <div className="w-3/5 h-full flex items-center relative">
+      <div className="w-4/5 md:w-3/5 h-full flex items-center relative">
         <TimeLine />
         <div className="py-20 flex flex-col gap-8 w-fit h-fit relative pl-8">
           <div className="text-base font-light text-white/40 tracking-wide">{`About />`}</div>
