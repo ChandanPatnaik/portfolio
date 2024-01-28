@@ -1,46 +1,47 @@
 "use client";
 import { CustomCursor } from "@/components/core";
-import { About, Contact, Header, Hero } from "@/components/home";
+import { About, Contact, Header, Hero, Projects } from "@/components/home";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
 export default function Home() {
+  const text = "Chandan Patnaik";
+
+  const textVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const containerVariants = {
+    hidden: {},
+    visible: { transition: { staggerChildren: 0.1 } },
+  };
+
   const [isLoading, setIsLoading] = useState(true);
   setInterval(() => {
     setIsLoading(false);
-  }, 1000);
+  }, 2000);
+
   return (
     <>
       {isLoading ? (
         <div className="w-screen h-screen bg-dark-blue">
           <div className="flex items-center justify-center w-full h-full text-white gap-2 text-xl">
-            <motion.p
-              viewport={{ once: true }}
-              initial={{ x: 20 }}
-              whileInView={{ x: 0 }}
-              transition={{ duration: 0.3, delay: 0.01 }}
-              exit={{ x: 0 }}
+            <motion.div
+              initial="hidden"
+              animate="visible"
+              variants={containerVariants}
             >
-              c
-            </motion.p>
-            <motion.p
-              viewport={{ once: true }}
-              initial={{ x: 40 }}
-              whileInView={{ x: 0 }}
-              transition={{ duration: 0.4, delay: 0.01 }}
-              exit={{ x: 0 }}
-            >
-              p
-            </motion.p>
-            <motion.p
-              viewport={{ once: true }}
-              initial={{ x: 60 }}
-              whileInView={{ x: 0 }}
-              transition={{ duration: 0.5, delay: 0.01 }}
-              exit={{ x: 0 }}
-            >
-              .
-            </motion.p>
+              {text.split("").map((char, index) => (
+                <motion.span
+                  key={index}
+                  variants={textVariants}
+                  style={{ display: "inline-block", margin: "0.2em" }}
+                >
+                  {char}
+                </motion.span>
+              ))}
+            </motion.div>
           </div>
         </div>
       ) : (
@@ -51,6 +52,7 @@ export default function Home() {
             <Hero />
           </section>
           <About />
+          <Projects />
           <Contact />
         </main>
       )}

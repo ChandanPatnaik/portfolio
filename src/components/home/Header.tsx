@@ -24,14 +24,14 @@ const Header = () => {
         icon: <MdRestartAlt />,
       },
       {
-        label: "Work",
-        link: "#work",
-        icon: <FaNetworkWired />,
-      },
-      {
         label: "About",
         link: "#about",
         icon: <BiCommentDetail />,
+      },
+      {
+        label: "Projects",
+        link: "#projects",
+        icon: <FaNetworkWired />,
       },
       {
         label: "Contact",
