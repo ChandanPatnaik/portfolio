@@ -16,7 +16,7 @@ export default function Home() {
         <Loader />
       ) : (
         <main className="w-full relative h-full">
-          <div className="fixed right-8 bottom-0">
+          <div className="hidden md:block fixed right-8 bottom-0">
             <SocialIconList />
           </div>
           <CustomCursor />
