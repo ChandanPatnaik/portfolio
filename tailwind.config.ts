@@ -11,6 +11,7 @@ const config: Config = {
       colors: {
         "light-yellow": "#cccc33",
         "dark-blue": "#14121c",
+        "dark-slate": "#0e0d10",
         milk: "#f9f9f9",
       },
     },

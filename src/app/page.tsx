@@ -1,6 +1,6 @@
 "use client";
 import { CustomCursor } from "@/components/core";
-import { About, Header, Hero } from "@/components/home";
+import { About, Contact, Header, Hero } from "@/components/home";
 
 export default function Home() {
   return (
@@ -10,6 +10,7 @@ export default function Home() {
         <Header />
         <Hero />
         <About />
+        <Contact />
       </section>
     </main>
   );
