@@ -60,13 +60,20 @@ const TextArea = () => {
           <HeroAnimatedText />
         </div>
       </div>
-      <div className="text-sm md:text-base font-light text-white/50">
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ opacity: 0, y: 10 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.7, delay: 0.07 }}
+        exit={{ opacity: 0, y: 10 }}
+        className="text-sm md:text-base font-light text-white/50"
+      >
         I am a MERN stack developer with a focus on crafting outstanding digital
         experiences. <br className="hidden md:block" /> Currently, I am
         dedicated to developing accessible and human-centered products,
         <br className="hidden md:block" /> contributing to advancements in the
         tech industry.
-      </div>
+      </motion.div>
       <div className="overflow-hidden">
         <HeroSlider />
       </div>
