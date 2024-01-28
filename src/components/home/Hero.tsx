@@ -3,11 +3,6 @@ import { HeroAnimatedText } from "../common";
 const Hero = () => {
   return (
     <section className="w-full flex items-center justify-center h-[calc(100%-4.5rem)] overflow-hidden">
-      <div className="absolute right-0 bottom-0 h-20 w-16 bg-gradient-to-b from-light-yellow/10 to-dark-blue overflow-hidden">
-        <div className=" text-light-yellow opacity-65 hover:opacity-100 common-transition text-3xl w-full h-full flex items-center justify-center">
-          <span className="rotate-90">→</span>
-        </div>
-      </div>
       <div className="w-4/5 md:w-3/5 h-full flex items-center">
         <TextArea />
       </div>

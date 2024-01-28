@@ -7,7 +7,7 @@ const About = () => {
     >
       <div className="w-4/5 md:w-3/5 h-full flex items-center relative">
         <TimeLine />
-        <div className="py-20 flex flex-col gap-8 w-fit h-fit relative pl-8">
+        <div className="py-12 flex flex-col gap-8 w-fit h-fit relative pl-8">
           <div className="text-base font-light text-white/40 tracking-wide">{`About />`}</div>
           <AboutBlock />
         </div>
@@ -20,9 +20,9 @@ export default About;
 const TimeLine = () => {
   return (
     <div className="absolute flex flex-col items-center top-0 left-0 h-[400%] w-4">
-      <div className="w-0.5 h-[5.5rem] bg-light-yellow"></div>
+      <div className="w-0.5 h-14 bg-light-yellow"></div>
       <div className="w-2 h-2 border border-light-yellow rounded-full bg-transparent"></div>
-      <div className="w-0.5 h-[calc(100%-6rem)] bg-light-yellow"></div>
+      <div className="w-0.5 h-[calc(100%-4rem)] bg-light-yellow"></div>
     </div>
   );
 };
@@ -48,8 +48,8 @@ const AboutBlock = () => {
           <p>14</p>
           <p>15</p>
           <p>16</p>
-          <p className="opacity-0">17</p>
           <p>17</p>
+          <p className="opacity-0">17</p>
           <p>18</p>
           <p>19</p>
           <p>20</p>
@@ -58,6 +58,7 @@ const AboutBlock = () => {
           <p>23</p>
           <p>24</p>
           <p>25</p>
+          <p>26</p>
         </div>
       </div>
 
