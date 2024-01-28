@@ -198,7 +198,7 @@ const HeroSlider = () => {
         {iconsArray.map((curIcon) => (
           <div
             key={curIcon.title}
-            className="!flex !flex-col !items-center !justify-center text-milk/10 text-3xl md:text-4xl"
+            className="!flex !flex-col !items-center !justify-center text-milk/20 text-3xl md:text-4xl"
           >
             <p className="">{curIcon.icon}</p>
             <p className="text-xs">{curIcon.title}</p>
