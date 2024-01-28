@@ -9,41 +9,38 @@ export default function Home() {
   setInterval(() => {
     setIsLoading(false);
   }, 1000);
-  let firstName = "chandan";
-  let lastName = "patnaik";
   return (
     <>
       {isLoading ? (
         <div className="w-screen h-screen bg-dark-blue">
-          <div className="flex w-full h-full gap-2 items-center justify-center">
-            <div className="flex items-center justify-center w-fit text-white gap-0.5 text-xl">
-              {firstName.split("").map((curStr, i) => (
-                <motion.p
-                  key={i}
-                  viewport={{ once: true }}
-                  initial={{ x: i * 20 }}
-                  whileInView={{ x: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.01 }}
-                  exit={{ x: 0 }}
-                >
-                  {curStr}
-                </motion.p>
-              ))}
-            </div>
-            <div className="flex items-center justify-center w-fit text-white gap-0.5 text-xl">
-              {lastName.split("").map((curStr, i) => (
-                <motion.p
-                  key={i}
-                  viewport={{ once: true }}
-                  initial={{ x: i * 20 }}
-                  whileInView={{ x: 0 }}
-                  transition={{ duration: 0.5, delay: i * 0.01 }}
-                  exit={{ x: 0 }}
-                >
-                  {curStr}
-                </motion.p>
-              ))}
-            </div>
+          <div className="flex items-center justify-center w-full h-full text-white gap-2 text-xl">
+            <motion.p
+              viewport={{ once: true }}
+              initial={{ x: 20 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 0.3, delay: 0.01 }}
+              exit={{ x: 0 }}
+            >
+              c
+            </motion.p>
+            <motion.p
+              viewport={{ once: true }}
+              initial={{ x: 40 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 0.4, delay: 0.01 }}
+              exit={{ x: 0 }}
+            >
+              p
+            </motion.p>
+            <motion.p
+              viewport={{ once: true }}
+              initial={{ x: 60 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 0.5, delay: 0.01 }}
+              exit={{ x: 0 }}
+            >
+              .
+            </motion.p>
           </div>
         </div>
       ) : (

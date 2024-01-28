@@ -2,6 +2,7 @@
 
 import { useScrollPosition } from "@/hooks";
 import { Collapse } from "@mui/material";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo, useState } from "react";
@@ -11,7 +12,6 @@ import { FaNetworkWired } from "react-icons/fa6";
 import { IoIosContact } from "react-icons/io";
 import { IoDocumentAttachOutline } from "react-icons/io5";
 import { MdRestartAlt } from "react-icons/md";
-
 const Header = () => {
   const { push } = useRouter();
   const [toggle, setToggle] = useState(false);
@@ -58,9 +58,33 @@ const Header = () => {
             className="flex group items-center gap-2 text-lg w-fit hover:gap-5 common-transition hover:text-light-yellow"
             onClick={() => push("/")}
           >
-            <p>c</p>
-            <p>p</p>
-            <p className="group-hover:animate-pulse">.</p>
+            <motion.p
+              viewport={{ once: true }}
+              initial={{ x: 20 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 0.3, delay: 0.01 }}
+              exit={{ x: 0 }}
+            >
+              c
+            </motion.p>
+            <motion.p
+              viewport={{ once: true }}
+              initial={{ x: 40 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 0.4, delay: 0.01 }}
+              exit={{ x: 0 }}
+            >
+              p
+            </motion.p>
+            <motion.p
+              viewport={{ once: true }}
+              initial={{ x: 60 }}
+              whileInView={{ x: 0 }}
+              transition={{ duration: 0.5, delay: 0.01 }}
+              exit={{ x: 0 }}
+            >
+              .
+            </motion.p>
           </div>
 
           <button
