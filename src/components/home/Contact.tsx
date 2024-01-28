@@ -12,7 +12,7 @@ const Contact = () => {
     >
       <div className="w-5/6 md:w-4/5 lg:w-3/5 h-full flex items-center relative">
         <TimeLine />
-        <div className="py-12 flex flex-col gap-8 w-full relative pl-6 md:pl-8">
+        <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
           <div className="text-base font-light text-white/40 tracking-wide">{`Contact />`}</div>
           <div className="w-full grid-cols-1 md:grid-cols-5 grid lg:grid-cols-11 gap-y-6 md:gap-6 items-center">
             <ContactDetails />
@@ -28,7 +28,7 @@ export default Contact;
 const TimeLine = () => {
   return (
     <div className="absolute flex flex-col items-center top-0 left-0 h-[400%] w-4">
-      <div className="w-0.5 h-14 bg-light-yellow"></div>
+      <div className="w-0.5 h-10 md:h-14 bg-light-yellow"></div>
       <div className="w-2 h-2 border border-light-yellow rounded-full bg-transparent"></div>
       <div className="w-0.5 h-[calc(100%-4rem)] bg-light-yellow"></div>
     </div>
