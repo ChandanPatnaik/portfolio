@@ -4,11 +4,11 @@
 @tailwind components;
 @tailwind utilities;
 
-/* * {
+* {
   box-sizing: border-box;
   scrollbar-width: thin;
-  scrollbar-color: #1b4e9b transparent;
-  scroll-behavior: smooth;
+  scrollbar-color: #cccc33 transparent;
+  scroll-behavior: smooth !important;
 }
 ::-webkit-scrollbar {
   width: 0.25em;
@@ -23,7 +23,7 @@
 }
 *:disabled {
   cursor: not-allowed;
-} */
+}
 
 html,
 body {
@@ -62,4 +62,19 @@ body {
 }
 .animate-pulse-custom {
   animation: pulse 800ms cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.line:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -20rem;
+  width: 120vw;
+  height: 1.5rem;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.1
+  ); /* Adjust the background color and opacity as needed */
 }

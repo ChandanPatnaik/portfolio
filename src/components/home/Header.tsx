@@ -1,5 +1,6 @@
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useMemo } from "react";
 
@@ -17,7 +18,7 @@ const Header = () => {
       },
       {
         label: "About",
-        link: "",
+        link: "#about",
       },
       {
         label: "Contact",
@@ -43,12 +44,11 @@ const Header = () => {
         </div>
         <ul className="hidden md:flex items-center gap-12 text-sm">
           {navigationData.map((curLabel) => (
-            <li
-              key={curLabel.label}
-              className="tracking-wider hover:text-light-yellow common-transition"
-            >
-              {curLabel.label}
-            </li>
+            <Link href={curLabel.link} key={curLabel.label}>
+              <li className="tracking-wider hover:text-light-yellow common-transition">
+                {curLabel.label}
+              </li>
+            </Link>
           ))}
         </ul>
       </div>

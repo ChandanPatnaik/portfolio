@@ -1,7 +1,10 @@
 "use client";
 const About = () => {
   return (
-    <section className="w-full flex items-center justify-center overflow-hidden bg-dark-blue">
+    <section
+      id="about"
+      className="w-full flex items-center justify-center overflow-hidden bg-dark-blue"
+    >
       <div className="w-4/5 md:w-3/5 h-full flex items-center relative">
         <TimeLine />
         <div className="py-20 flex flex-col gap-8 w-fit h-fit relative pl-8">
@@ -29,7 +32,7 @@ const AboutBlock = () => {
     <section className="flex flex-col relative">
       <div className="w-fit h-full absolute top-0 -left-16">
         <div className="flex flex-col text-milk/30 tracking-wide leading-6 text-sm">
-          <p>01</p>
+          <p className="">01</p>
           <p>02</p>
           <p>03</p>
           <p>04</p>
@@ -73,15 +76,30 @@ const AboutBlock = () => {
 
       {/* --------------- comment section ------------ */}
       <div className="text-milk/40 flex font-normal items-center gap-2">
-        <div className="flex items-center' gap-1">
+        <div className="flex items-center gap-1">
           <p>/</p>
           <p>/</p>
         </div>
-        <p>I</p>
-        <p>can,</p>
-        <p>Because</p>
-        <p>I</p>
-        <p>did.</p>
+        <p>Remove</p>
+        <p>all</p>
+        <p>logs</p>
+        <p>from</p>
+        <p>my</p>
+        <p>code</p>
+      </div>
+      <div className="text-milk/40 flex font-normal items-center gap-2">
+        <div className="flex items-center gap-1">
+          <p>/</p>
+          <p>/</p>
+        </div>
+        <p>Constructor</p>
+        <p>to</p>
+        <p>initialize</p>
+        <p>instances</p>
+        <p>and</p>
+        <p>set</p>
+        <p>up</p>
+        <p>values</p>
       </div>
 
       {/* --------------- constructor section ------------ */}
