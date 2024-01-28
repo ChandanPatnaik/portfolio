@@ -10,11 +10,11 @@ const Contact = () => {
       id="contact"
       className="w-full flex items-center justify-center overflow-hidden bg-dark-slate shadow-[0_0_76px_0_rgba(10,7,22,0.004)]"
     >
-      <div className="w-4/5 md:w-3/5 h-full flex items-center relative">
+      <div className="w-5/6 md:w-4/5 lg:w-3/5 h-full flex items-center relative">
         <TimeLine />
-        <div className="py-12 flex flex-col gap-8 w-full relative pl-8">
+        <div className="py-12 flex flex-col gap-8 w-full relative pl-6 md:pl-8">
           <div className="text-base font-light text-white/40 tracking-wide">{`Contact />`}</div>
-          <div className="w-full grid grid-cols-11 gap-6 items-center">
+          <div className="w-full grid-cols-1 md:grid-cols-5 grid lg:grid-cols-11 gap-y-6 md:gap-6 items-center">
             <ContactDetails />
             <ContactUsForm />
           </div>
@@ -37,14 +37,14 @@ const TimeLine = () => {
 
 const ContactDetails = () => {
   return (
-    <div className="w-full flex flex-col gap-8 col-span-6">
-      <div className="font-bold text-4xl flex flex-col gap-2 tracking-wider text-milk">
+    <div className="w-full flex flex-col gap-6 md:gap-8 md:col-span-6">
+      <div className="font-bold text-3xl md:text-4xl flex flex-col gap-0 md:gap-2 tracking-wider text-milk">
         <p className="">{`Let's find`}</p>
         <p className="">{`solution `}</p>
         <p className="text-red-500">{`together?`}</p>
       </div>
 
-      <div className="text-milk/60 tracking-wide text-lg ">
+      <div className="text-milk/60 tracking-wide md:text-lg ">
         <p>Fill in the form or just use my contacts below.</p>
         <p>‍If you need to put a project on the move, let’s work on it!</p>
       </div>
@@ -110,7 +110,7 @@ const ContactUsForm = () => {
     return accumulator;
   }, {} as { [key: string]: Yup.StringSchema<string> });
   return (
-    <section className="col-span-5">
+    <section className="md:col-span-4 lg:col-span-5 w-full">
       <Formik
         initialValues={contactSchemaInitialValues}
         validationSchema={Yup.object(contactSchemaValidationSchema)}
@@ -118,18 +118,18 @@ const ContactUsForm = () => {
         enableReinitialize={true}
       >
         {(formik) => (
-          <Form className="w-full flex flex-col gap-3 md:gap-6 z-20 ">
+          <Form className="w-full flex flex-col gap-3 md:gap-6">
             {contactSchema.map((inputItem) => (
               <Field name={inputItem.name} key={inputItem.key}>
                 {(props: FieldProps<string>) => (
                   <div
-                    className={`flex gap-2 flex-col justify-center ${inputItem.className}`}
+                    className={`flex w-full gap-2 flex-col justify-center ${inputItem.className}`}
                   >
                     <p className="text-sm font-medium text-milk">
                       {inputItem.label}
                       {inputItem.required ? "*" : ""}
                     </p>
-                    <div className="col-span-6 w-full">
+                    <div className="w-full">
                       <CustomInput
                         key={inputItem?.key}
                         InputProps={{
@@ -167,7 +167,7 @@ const ContactUsForm = () => {
             <div className="flex flex-col">
               <button
                 type="submit"
-                className="w-full col-span-full  py-2 bg-blue-700 font-semibold text-white rounded-sm"
+                className="w-full cursor-none col-span-full  py-2 bg-blue-700 font-semibold text-white rounded-sm"
               >
                 Submit Form
               </button>

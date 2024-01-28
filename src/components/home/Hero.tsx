@@ -18,7 +18,7 @@ import { HeroAnimatedText } from "../common";
 const Hero = () => {
   return (
     <section className="w-full flex items-center justify-center h-[calc(100%-4.5rem)] overflow-hidden">
-      <div className="w-4/5 md:w-3/5 h-full flex items-center">
+      <div className="w-5/6 md:w-4/5 lg:w-3/5 h-full flex items-center">
         <TextArea />
       </div>
     </section>
@@ -28,12 +28,12 @@ export default Hero;
 
 const TextArea = () => {
   return (
-    <div className="flex flex-col gap-8 w-full h-fit relative text-3xl md:text-5xl font-semibold pl-6 md:pl-8">
+    <div className="flex flex-col gap-8 w-full h-fit relative text-3xl md:text-4xl lg:text-5xl font-semibold pl-6 md:pl-8">
       <TimeLine />
       <div className="text-base font-light text-white/40 tracking-wide">
         {`Start />`}
       </div>
-      <div className="flex flex-col md:gap-6">
+      <div className="flex flex-col md:gap-3 lg:gap-6">
         <div className="text-milk">
           Hi, my name is
           <span className="text-light-yellow"> Chandan Patnaik</span> <br />
@@ -84,6 +84,26 @@ const HeroSlider = () => {
     pauseOnHover: false,
     arrows: false,
     ltr: true,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 5,
+        },
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 3,
+        },
+      },
+    ],
   };
 
   const iconsArray = [
@@ -143,7 +163,7 @@ const HeroSlider = () => {
         {iconsArray.map((curIcon) => (
           <div
             key={curIcon.title}
-            className="!flex !flex-col !items-center !justify-center text-milk/10 text-5xl"
+            className="!flex !flex-col !items-center !justify-center text-milk/10 text-3xl md:text-4xl"
           >
             <p className="">{curIcon.icon}</p>
             <p className="text-xs">{curIcon.title}</p>
