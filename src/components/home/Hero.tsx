@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { useRef } from "react";
 import { DiMongodb } from "react-icons/di";
 import {
@@ -36,7 +37,22 @@ const TextArea = () => {
       <div className="flex flex-col md:gap-3 lg:gap-4">
         <span className="text-lg text-light-sky"> Hi, my name is</span>
         <div className="text-light-sky">
-          <span className="text-light-yellow"> Chandan Patnaik</span> <br />
+          <span className="text-light-yellow">
+            {" "}
+            {"Chandan Patnaik"?.split("")?.map((data, i) => (
+              <motion.span
+                viewport={{ once: true }}
+                initial={{ scale: 0, opacity: 0 }}
+                whileInView={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 0.7, delay: i * 0.07 }}
+                exit={{ scale: 0, opacity: 0 }}
+                key={i}
+              >
+                {data}
+              </motion.span>
+            ))}
+          </span>{" "}
+          <br />
         </div>
         <div className="text-light-sky">
           I <span className="italic font-normal">design</span> & develop{" "}
@@ -62,7 +78,14 @@ const TimeLine = () => {
   return (
     <div className="absolute flex flex-col items-center top-2 left-0 h-[400%] w-4">
       <div className="w-2 h-2 bg-transparent border rounded-full border-light-yellow"></div>
-      <div className="w-0.5 h-72 bg-light-yellow"></div>
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ scale: 1, y: 0, height: 0 }}
+        whileInView={{ scale: 1, y: 0, height: "18rem" }}
+        transition={{ duration: 1 }}
+        exit={{ scale: 0, y: -40 }}
+        className="w-0.5 h-72 bg-light-yellow"
+      ></motion.div>
       <div className="h-7 w-4 group rounded-full border-milk/40 border-2 p-1 flex justify-center">
         <div className="w-0.5 animate-bounce h-1 group-hover:h-2 common-transition bg-light-yellow"></div>
       </div>
