@@ -17,7 +17,7 @@ import { HeroAnimatedText } from "../common";
 
 const Hero = () => {
   return (
-    <section className="w-full flex items-center justify-center h-[calc(100%-4.5rem)] overflow-hidden">
+    <section className="w-full flex items-center justify-center h-full overflow-hidden">
       <div className="w-5/6 md:w-4/5 lg:w-3/5 h-full flex items-center">
         <TextArea />
       </div>

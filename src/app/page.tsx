@@ -9,9 +9,9 @@ export default function Home() {
       <section className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-screen">
         <Header />
         <Hero />
-        <About />
-        <Contact />
       </section>
+      <About />
+      <Contact />
     </main>
   );
 }

@@ -17,7 +17,7 @@ const CustomCursor = () => {
   return (
     <>
       <div
-        className={`fixed w-7 h-7 rounded-full z-[9999] custom-cursor border border-white flex items-center justify-center`}
+        className={`fixed w-7 h-7 rounded-full z-[9999] custom-cursor border border-white hidden lg:flex items-center justify-center`}
         style={{
           left: `${position.x - 0}px`,
           top: `${position.y - 0}px`,
