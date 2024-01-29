@@ -46,6 +46,7 @@ const Projects = () => {
     </section>
   );
 };
+
 export default Projects;
 
 const TimeLine = () => {
