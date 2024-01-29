@@ -1,8 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 // components/CustomCursor.js
+import { useTorch } from "@/hooks";
 import { useEffect, useState } from "react";
 
 const CustomCursor = () => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
+  const { isTorchOn, setIsTorchOn } = useTorch();
 
   useEffect(() => {
     const updateCursorPosition = (e: any) => {
@@ -17,7 +20,9 @@ const CustomCursor = () => {
   return (
     <>
       <div
-        className={`fixed w-7 h-7 rounded-full z-[9999] custom-cursor border border-white hidden lg:flex items-center justify-center`}
+        className={`fixed ${
+          isTorchOn ? "" : "w-7 h-7 border"
+        } rounded-full z-[9999] custom-cursor border-white hidden lg:flex items-center justify-center`}
         style={{
           left: `${position.x - 0}px`,
           top: `${position.y - 0}px`,
@@ -25,13 +30,19 @@ const CustomCursor = () => {
           transform: "translate(-50%, -50%)",
         }}
       >
-        <div
-          className={`w-1.5 h-1.5 bg-white rounded-full hover:cursor-none`}
-          style={{
-            marginLeft: "-1px",
-            marginTop: "-1px",
-          }}
-        />
+        {isTorchOn ? (
+          <div className="w-16 h-16 overflow-hidden rounded-full">
+            <img src="/giphy.gif" alt="" className="w-full h-full" />
+          </div>
+        ) : (
+          <div
+            className={`w-1.5 h-1.5 bg-white rounded-full hover:cursor-none`}
+            style={{
+              marginLeft: "-1px",
+              marginTop: "-1px",
+            }}
+          />
+        )}
       </div>
     </>
   );

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
+
 const Projects = () => {
   return (
     <section
@@ -62,34 +63,34 @@ const ProjectsList = () => {
     {
       name: "Portfolio",
       description:
-        "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
+        "Explore my portfolio crafted with Next.js, Tailwind CSS, and Framer Motion. Discover sleek designs, responsive layouts, and captivating animations showcasing my passion for web development.",
       image: "/project-placeholder.png",
       tech: ["Next.js", "TailwindCSS", "Framer Motion"],
     },
-    {
-      name: "Build a Spotify Connected App",
-      description:
-        "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-      image: "/project-placeholder.png",
-      tech: ["React", "Express", "Node.js", "MongoDB"],
-    },
-    {
-      name: "Build a Spotify Connected App",
-      description:
-        "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-      image: "/project-placeholder.png",
-      tech: ["React", "Express", "Node.js", "MongoDB"],
-    },
-    {
-      name: "Build a Spotify Connected App",
-      description:
-        "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-      image: "/project-placeholder.png",
-      tech: ["React", "Express", "Node.js", "MongoDB"],
-    },
+    // {
+    //   name: "Build a Spotify Connected App",
+    //   description:
+    //     "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
+    //   image: "/project-placeholder.png",
+    //   tech: ["React", "Express", "Node.js", "MongoDB"],
+    // },
+    // {
+    //   name: "Build a Spotify Connected App",
+    //   description:
+    //     "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
+    //   image: "/project-placeholder.png",
+    //   tech: ["React", "Express", "Node.js", "MongoDB"],
+    // },
+    // {
+    //   name: "Build a Spotify Connected App",
+    //   description:
+    //     "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
+    //   image: "/project-placeholder.png",
+    //   tech: ["React", "Express", "Node.js", "MongoDB"],
+    // },
   ];
   return (
-    <div className="w-full grid grid-cols-2 gap-5">
+    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
       {projectList.map((curProject, i) => (
         <div
           key={i}

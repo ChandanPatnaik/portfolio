@@ -18,25 +18,30 @@ export default function Home() {
   }, 2000);
 
   return (
-    <>
-      {isLoading ? (
-        <Loader />
-      ) : (
-        <main className="w-full relative h-full">
-          <div className="hidden md:block fixed right-8 bottom-0">
-            <SocialIconList />
-          </div>
-          <CustomCursor />
-          <section className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-screen">
-            <Header />
-            <Hero />
+    <main className="">
+      <div className="text-milk/60 text-center font-bold w-full h-screen flex items-center justify-center text-xl p-8">
+        Work is in under process Please visit later or open in large screen
+      </div>
+      <section className="w-full hidden md:block">
+        {isLoading ? (
+          <Loader />
+        ) : (
+          <section className="w-full relative h-full">
+            <div className="hidden md:block fixed z-[200] right-8 bottom-0">
+              <SocialIconList />
+            </div>
+            <CustomCursor />
+            <section className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-screen">
+              <Header />
+              <Hero />
+            </section>
+            <About />
+            <Projects />
+            <Contact />
+            <Footer />
           </section>
-          <About />
-          <Projects />
-          <Contact />
-          <Footer />
-        </main>
-      )}
-    </>
+        )}
+      </section>
+    </main>
   );
 }

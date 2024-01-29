@@ -1,30 +1,57 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
-import { useEffect, useState } from "react";
+import { useSpotLight, useTorch } from "@/hooks";
+import { LightSwitch } from "../common";
 
 const About = () => {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
+  const { isTorchOn, setIsTorchOn } = useTorch();
+  const { backgroundStyle } = useSpotLight({});
 
-  const gradientX = cursorPosition.x + "px";
-  const gradientY = cursorPosition.y + "px";
-
-  const backgroundStyle = {
-    background: `radial-gradient(600px at ${gradientX} ${gradientY}, rgba(175, 188, 227, 0.20), transparent 80%)`,
-  };
   return (
     <section
-      style={backgroundStyle}
+      style={isTorchOn ? backgroundStyle : {}}
       id="about"
-      className="w-full flex items-center justify-center overflow-hidden bg-dark-blue"
+      className="w-full relative flex items-center justify-center overflow-hidden bg-dark-blue"
     >
+      {isTorchOn && (
+        <div className="left-10 text-4xl font-semibold top-4 absolute w-fit text-dark-blue">
+          I am a loop that can be endless, yet I always have an exit. What am I?
+        </div>
+      )}
+      {isTorchOn && (
+        <div className="right-1/3 text-2xl font-semibold bottom-1/3 absolute text-dark-blue">
+          while loop.
+        </div>
+      )}
+      {isTorchOn && (
+        <div className="left-0 text-xl font-semibold bottom-40 rotate-90 absolute text-dark-blue">
+          17 Jan 2000
+        </div>
+      )}
+      {isTorchOn && (
+        <div className="right-20 text-xl font-semibold bottom-40 rotate-90 absolute text-dark-blue">
+          23 Dec 2022
+        </div>
+      )}
+      {isTorchOn && (
+        <div className="right-24 text-xl font-semibold top-40 rotate-90 absolute text-dark-blue">
+          Books
+        </div>
+      )}
+      {isTorchOn && (
+        <div className="bottom-2 text-3xl font-semibold right-2 absolute text-dark-blue">
+          S
+        </div>
+      )}
+
+      <div className="absolute right-5 top-5">
+        <div className="bg-milk/20 pl-5 py-1 rounded-full flex items-center justify-center w-fit h-fit">
+          <LightSwitch
+            checked={isTorchOn}
+            onChange={() => setIsTorchOn(!isTorchOn)}
+          />
+        </div>
+      </div>
       <div className="w-5/6 md:w-4/5 lg:w-3/5 h-full flex items-center relative">
         <TimeLine />
         <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-fit h-fit relative pl-6 md:pl-8">
@@ -78,7 +105,6 @@ const AboutBlock = () => {
           <p>23</p>
           <p>24</p>
           <p>25</p>
-          <p>26</p>
         </div>
       </div>
 
@@ -143,14 +169,6 @@ const AboutBlock = () => {
             </div>
             <div className="text-red-400">{`=`}</div>
             <div className="text-blue-300">{`'Chandan Kumar Patnaik'`}</div>
-          </div>
-          <div className="flex items-center gap-2">
-            <div className="flex items-center">
-              <p className="text-blue-400">this.</p>
-              <p className="text-white">dayOfBirthTimestamp</p>
-            </div>
-            <div className="text-red-400">{`=`}</div>
-            <div className="text-blue-300">{`948047400`}</div>
           </div>
           <div className="flex items-center gap-2">
             <div className="flex items-center">

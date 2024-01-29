@@ -40,7 +40,7 @@ const Header = () => {
       },
       {
         label: "Resume",
-        link: "",
+        link: "/chandan-patnaik.pdf",
         icon: <IoDocumentAttachOutline />,
       },
     ],
@@ -95,32 +95,63 @@ const Header = () => {
           </button>
 
           <ul className="hidden md:flex items-center gap-12 text-sm">
-            {navigationData.map((curLabel, i) => (
-              <Link href={curLabel.link} key={curLabel.label}>
-                <li className="tracking-wider hover:text-light-yellow cursor-none common-transition">
-                  <span className="font-[Roboto]">
-                    0<span>{i + 1}.</span>
-                  </span>{" "}
-                  {curLabel.label}
-                </li>
-              </Link>
-            ))}
+            {navigationData.map((curLabel, i) =>
+              i === navigationData?.length - 1 ? (
+                <a
+                  href={curLabel.link}
+                  key={curLabel.label}
+                  target="_blank"
+                  download={true}
+                >
+                  <li className="tracking-wider hover:text-light-yellow cursor-none common-transition">
+                    <span className="font-[Roboto]">
+                      0<span>{i + 1}.</span>
+                    </span>{" "}
+                    {curLabel.label}
+                  </li>
+                </a>
+              ) : (
+                <Link href={curLabel.link} key={curLabel.label}>
+                  <li className="tracking-wider hover:text-light-yellow cursor-none common-transition">
+                    <span className="font-[Roboto]">
+                      0<span>{i + 1}.</span>
+                    </span>{" "}
+                    {curLabel.label}
+                  </li>
+                </Link>
+              )
+            )}
           </ul>
         </div>
 
         <Collapse in={toggle}>
           <div className="w-full pt-5">
             <ul className="grid grid-cols-5 gap-4 text-sm">
-              {navigationData.map((curLabel) => (
-                <Link href={curLabel.link} key={curLabel.label}>
-                  <div className="w-full h-fit p-1 border border-light-yellow/10 rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] flex items-center justify-center flex-col">
-                    <div className="text-xl text-milk/30">{curLabel.icon}</div>
-                    <li className="text-[9px] text-milk/60 common-transition leading-4">
-                      {curLabel.label}
-                    </li>
-                  </div>
-                </Link>
-              ))}
+              {navigationData.map((curLabel, i) =>
+                i === navigationData?.length - 1 ? (
+                  <a href={curLabel.link} key={curLabel.label} download={true}>
+                    <div className="w-full h-fit p-1 border border-light-yellow/10 rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] flex items-center justify-center flex-col">
+                      <div className="text-xl text-milk/30">
+                        {curLabel.icon}
+                      </div>
+                      <li className="text-[9px] text-milk/60 common-transition leading-4">
+                        {curLabel.label}
+                      </li>
+                    </div>
+                  </a>
+                ) : (
+                  <Link href={curLabel.link} key={curLabel.label}>
+                    <div className="w-full h-fit p-1 border border-light-yellow/10 rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] flex items-center justify-center flex-col">
+                      <div className="text-xl text-milk/30">
+                        {curLabel.icon}
+                      </div>
+                      <li className="text-[9px] text-milk/60 common-transition leading-4">
+                        {curLabel.label}
+                      </li>
+                    </div>
+                  </Link>
+                )
+              )}
             </ul>
           </div>
         </Collapse>
