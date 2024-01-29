@@ -31,9 +31,16 @@ const TextArea = () => {
   return (
     <div className="flex flex-col gap-6 md:gap-8 w-full h-fit relative text-3xl md:text-4xl lg:text-6xl font-semibold pl-6 md:pl-8">
       <TimeLine />
-      <div className="text-base font-light text-white/40 tracking-wide">
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ x: 40 }}
+        whileInView={{ x: 0 }}
+        transition={{ duration: 0.3, delay: 0.1 }}
+        exit={{ x: 40 }}
+        className="text-base font-light text-white/40 tracking-wide"
+      >
         {`Start />`}
-      </div>
+      </motion.div>
       <div className="flex flex-col md:gap-3 lg:gap-4">
         <span className="text-lg text-light-sky"> Hi, my name is</span>
         <div className="text-light-sky">

@@ -1,7 +1,14 @@
 "use client";
 import { Loader, SocialIconList } from "@/components/common";
 import { CustomCursor } from "@/components/core";
-import { About, Contact, Header, Hero, Projects } from "@/components/home";
+import {
+  About,
+  Contact,
+  Footer,
+  Header,
+  Hero,
+  Projects,
+} from "@/components/home";
 import { useState } from "react";
 
 export default function Home() {
@@ -27,6 +34,7 @@ export default function Home() {
           <About />
           <Projects />
           <Contact />
+          <Footer />
         </main>
       )}
     </>

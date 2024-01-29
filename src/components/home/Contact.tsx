@@ -1,6 +1,7 @@
 "use client";
 
 import { Field, FieldProps, Form, Formik } from "formik";
+import { motion } from "framer-motion";
 import * as Yup from "yup";
 import { CustomInput } from "../core";
 
@@ -39,9 +40,42 @@ const ContactDetails = () => {
   return (
     <div className="w-full flex flex-col gap-6 md:gap-8 md:col-span-6">
       <div className="font-bold text-3xl md:text-4xl flex flex-col gap-0 md:gap-2 tracking-wider text-milk">
-        <p className="">{`Let's find`}</p>
-        <p className="">{`solution `}</p>
-        <p className="text-red-500">{`together?`}</p>
+        <p className="">
+          {`Let's find`.split("").map((curStr, i) => (
+            <motion.span
+              viewport={{ once: true }}
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.7, delay: i * 0.07 }}
+              exit={{ scale: 0, opacity: 0 }}
+              key={i}
+            >
+              {curStr}
+            </motion.span>
+          ))}
+        </p>
+        <p className="">
+          {`solution`.split("").map((curStr, i) => (
+            <motion.span
+              viewport={{ once: true }}
+              initial={{ scale: 0, opacity: 0 }}
+              whileInView={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.7, delay: i * 0.07 + 0.7 }}
+              exit={{ scale: 0, opacity: 0 }}
+              key={i}
+            >
+              {curStr}
+            </motion.span>
+          ))}
+        </p>
+        <motion.p
+          viewport={{ once: true }}
+          initial={{ y: 20 }}
+          whileInView={{ y: 0 }}
+          transition={{ duration: 0.7, delay: 0.7 }}
+          exit={{ y: 20 }}
+          className="text-red-500"
+        >{`together?`}</motion.p>
       </div>
 
       <div className="text-milk/60 tracking-wide md:text-lg ">

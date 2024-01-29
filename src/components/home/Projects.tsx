@@ -1,31 +1,39 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-import { useEffect, useState } from "react";
 const Projects = () => {
-  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  useEffect(() => {
-    const handleMouseMove = (e: any) => {
-      setCursorPosition({ x: e.clientX, y: e.clientY });
-    };
-    window.addEventListener("mousemove", handleMouseMove);
-    return () => {
-      window.removeEventListener("mousemove", handleMouseMove);
-    };
-  }, []);
-
-  const gradientX = cursorPosition.x + "px";
-  const gradientY = cursorPosition.y + "px";
-
-  const backgroundStyle = {
-    background: `radial-gradient(600px at ${gradientX} ${gradientY}, rgba(29, 78, 216, 0.25), transparent 80%)`,
-  };
-
   return (
     <section
-      style={backgroundStyle}
       id="projects"
-      className="w-full flex items-center justify-center overflow-hidden  shadow-[0_0_76px_0_rgba(10,7,22,0.004)]"
+      className="w-full relative bg-light-sky/5 flex items-center justify-center overflow-hidden  shadow-[0_0_76px_0_rgba(10,7,22,0.004)]"
     >
+      <div className="absolute top-20 text-9xl font-semibold text-milk/5 left-10">
+        Websites
+      </div>
+      <div className="absolute bottom-10 text-7xl font-semibold text-milk/5 left-10">
+        HTML
+      </div>
+      <div className="absolute top-20 text-9xl font-semibold text-milk/5 right-10">
+        CSS
+      </div>
+      <div className="absolute top-0 text-5xl font-semibold text-milk/5 left-10">
+        Javascript
+      </div>
+      <div className="absolute top-1/2 text-7xl font-semibold text-milk/5 left-32">
+        Typescript
+      </div>
+      <div className="absolute top-1/3 text-6xl font-semibold text-milk/5 right-20">
+        Node.js
+      </div>
+      <div className="absolute bottom-1/3 text-6xl font-semibold text-milk/5 right-2">
+        React
+      </div>
+      <div className="absolute bottom-20 text-6xl font-semibold text-milk/5 right-44">
+        Next.js
+      </div>
+      <div className="absolute bottom-44 text-7xl font-semibold text-milk/5 left-1/2">
+        Tailwind CSS
+      </div>
+
       <div className="w-5/6 md:w-4/5 lg:w-3/5 h-full flex items-center relative">
         <TimeLine />
         <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
@@ -52,18 +60,11 @@ const TimeLine = () => {
 const ProjectsList = () => {
   const projectList = [
     {
-      name: "Build a Spotify Connected App",
+      name: "Portfolio",
       description:
         "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
       image: "/project-placeholder.png",
-      tech: ["React", "Express", "Node.js", "MongoDB"],
-    },
-    {
-      name: "Build a Spotify Connected App",
-      description:
-        "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-      image: "/project-placeholder.png",
-      tech: ["React", "Express", "Node.js", "MongoDB"],
+      tech: ["Next.js", "TailwindCSS", "Framer Motion"],
     },
     {
       name: "Build a Spotify Connected App",
@@ -88,11 +89,12 @@ const ProjectsList = () => {
     },
   ];
   return (
-    <div className="w-full flex flex-col gap-5">
+    <div className="w-full grid grid-cols-2 gap-5">
       {projectList.map((curProject, i) => (
         <div
           key={i}
-          className="w-full h-44 bg-dark-blue grid grid-cols-12 gap-3 rounded-lg overflow-hidden"
+          className="w-full bg-dark-slate border border-light-sky/10 flex flex-col gap-3 rounded-lg overflow-hidden"
+          onClick={() => alert("clicked")}
         >
           <div className="col-span-4">
             <img
@@ -105,7 +107,17 @@ const ProjectsList = () => {
             <p className="text-lg text-milk/80 font-semibold">
               {curProject.name}
             </p>
-            <p className="text-milk/70">{curProject.description}</p>
+            <p className="text-milk/70 text-sm">{curProject.description}</p>
+            <div className="flex items-center gap-3 pt-2">
+              {curProject.tech.map((curTech) => (
+                <div
+                  className=" border-milk/20 border text-milk/70 text-xs rounded-full px-3 py-1"
+                  key={curTech}
+                >
+                  {curTech}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       ))}

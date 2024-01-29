@@ -1,7 +1,27 @@
 "use client";
+import { useEffect, useState } from "react";
+
 const About = () => {
+  const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
+  useEffect(() => {
+    const handleMouseMove = (e: any) => {
+      setCursorPosition({ x: e.clientX, y: e.clientY });
+    };
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => {
+      window.removeEventListener("mousemove", handleMouseMove);
+    };
+  }, []);
+
+  const gradientX = cursorPosition.x + "px";
+  const gradientY = cursorPosition.y + "px";
+
+  const backgroundStyle = {
+    background: `radial-gradient(600px at ${gradientX} ${gradientY}, rgba(175, 188, 227, 0.20), transparent 80%)`,
+  };
   return (
     <section
+      style={backgroundStyle}
       id="about"
       className="w-full flex items-center justify-center overflow-hidden bg-dark-blue"
     >
@@ -81,6 +101,7 @@ const AboutBlock = () => {
           <p>/</p>
           <p>/</p>
         </div>
+        <p>Todo:</p>
         <p>Remove</p>
         <p>all</p>
         <p>logs</p>
@@ -240,22 +261,26 @@ const AboutBlock = () => {
               <p className="">{`'Tailwind CSS',`}</p>
               <p className="">{`'Material UI',`}</p>
               <p className="">{`'React',`}</p>
-              <p className="">{`'Next.js',`}</p>
+              <p className="">{`'NextUI',`}</p>
               <p className="">{`'Formik'`}</p>
               <p className="">{`'Yup',`}</p>
             </div>
           </div>
           <div className="flex items-center gap-2 flex-wrap text-green-400">
+            <p className="">{`'Firebase',`}</p>
+            <p className="">{`'Next.js',`}</p>
             <p className="">{`'Node.js',`}</p>
             <p className="">{`'Express',`}</p>
             <p className="">{`'MongoDB',`}</p>
             <p className="">{`'Mongoose',`}</p>
             <p className="">{`'Prisma',`}</p>
-            <p className="">{`'npm/yarn'`}</p>
+            <p className="">{`'REST'`}</p>
             <p className="">{`'Typescript',`}</p>
-            <p className="">{`'Redis',`}</p>
           </div>
           <div className="flex items-center gap-2 flex-wrap text-green-400">
+            <p className="">{`'Postman',`}</p>
+            <p className="">{`'Redis',`}</p>
+            <p className="">{`'npm/yarn',`}</p>
             <p className="">{`'Git',`}</p>
             <p className="">{`'GitHub',`}</p>
             <p className="">{`'S3',`}</p>
