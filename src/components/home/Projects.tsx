@@ -63,7 +63,7 @@ const ProjectsList = () => {
     {
       name: "Portfolio",
       description:
-        "Explore my portfolio crafted with Next.js, Tailwind CSS, and Framer Motion. Discover sleek designs, responsive layouts, and captivating animations showcasing my passion for web development.",
+        "Explore my portfolio crafted with Next.js, Tailwind CSS, and Framer Motion. Discover sleek designs, responsive layouts, and captivating animations.",
       image: "/project-placeholder.png",
       tech: ["Next.js", "TailwindCSS", "Framer Motion"],
     },
