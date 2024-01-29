@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { useRef } from "react";
 import { DiMongodb } from "react-icons/di";
 import {
@@ -100,12 +101,18 @@ const TimeLine = () => {
         exit={{ scale: 0, y: -40 }}
         className="w-0.5 h-72 bg-light-yellow"
       ></motion.div>
-      <div className="h-7 w-4 group rounded-full border-milk/40 border-2 p-1 flex justify-center">
-        <div className="w-0.5 animate-bounce h-1 group-hover:h-2 common-transition bg-light-yellow"></div>
-      </div>
+      <Link href={"/#about"}>
+        <div className="h-7 w-4 cursor-none group rounded-full border-milk/40 border-2 p-1 flex justify-center">
+          <div className="w-0.5 animate-bounce h-1 group-hover:h-2 common-transition bg-light-yellow"></div>
+        </div>
+      </Link>
       <div className="w-0.5 h-10 bg-light-yellow"></div>
       <div className="h-16 flex items-center justify-center">
-        <div className="text-xs w-fit text-milk/40 rotate-[270deg]">SCROLL</div>
+        <Link href={"/#about"}>
+          <div className="text-xs cursor-none w-fit text-milk/40 rotate-[270deg]">
+            SCROLL
+          </div>
+        </Link>
       </div>
       <div className="w-0.5 h-[calc(100%-23rem)] bg-light-yellow"></div>
     </div>
