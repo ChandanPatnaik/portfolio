@@ -14,6 +14,7 @@ const SocialIconList = () => {
     },
     {
       icon: <BiLogoGmail />,
+      link: "mailto:chandanpatnaik81@gmail.com",
     },
   ];
   return (

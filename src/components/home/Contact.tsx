@@ -83,9 +83,13 @@ const ContactDetails = () => {
         <p>‍If you need to put a project on the move, let’s work on it!</p>
       </div>
 
-      <div className="text-milk tracking-wide hover:tracking-widest w-fit common-transition">
+      <a
+        href="mailto:chandanpatnaik81@gmail.com"
+        target="_blank"
+        className="text-milk tracking-wide hover:tracking-widest w-fit common-transition"
+      >
         chandanpatnaik81@gmail.com
-      </div>
+      </a>
     </div>
   );
 };
