@@ -12,7 +12,7 @@ const Footer = () => {
             whileInView={{ x: 0 }}
             transition={{ duration: 0.3, delay: 0.3 }}
             exit={{ x: 40 }}
-            className="text-sm flex items-center gap-2 font-light text-white/60 tracking-wide"
+            className="text-sm hidden md:flex items-center gap-2 font-light text-white/60 tracking-wide"
           >
             <p>
               Develop and Design by{" "}
@@ -23,6 +23,23 @@ const Footer = () => {
               © copyright {new Date().getFullYear()} Chandan. All rights
               reserved.
             </p>
+          </motion.div>
+
+          <motion.div
+            viewport={{ once: true }}
+            initial={{ x: 40 }}
+            whileInView={{ x: 0 }}
+            transition={{ duration: 0.3, delay: 0.3 }}
+            exit={{ x: 40 }}
+            className="text-sm md:hidden flex items-center gap-2 font-light text-white/60 tracking-wide"
+          >
+            <p>
+              Develop and Design by{" "}
+              <span className="text-light-yellow">Chandan</span> <span>| </span>
+              © copyright {new Date().getFullYear()} Chandan. All rights
+              reserved.
+            </p>
+            <p></p>
           </motion.div>
         </div>
       </div>
