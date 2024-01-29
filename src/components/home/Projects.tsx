@@ -5,7 +5,7 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full relative bg-light-sky/5 flex items-center justify-center overflow-hidden  shadow-[0_0_76px_0_rgba(10,7,22,0.004)]"
+      className="w-full  scroll-m-10 relative bg-light-sky/5 flex items-center justify-center overflow-hidden  shadow-[0_0_76px_0_rgba(10,7,22,0.004)]"
     >
       <div className="absolute top-20 text-9xl font-semibold text-milk/5 left-10">
         Websites

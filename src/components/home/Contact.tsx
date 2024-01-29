@@ -148,7 +148,10 @@ const ContactUsForm = () => {
       <Formik
         initialValues={contactSchemaInitialValues}
         validationSchema={Yup.object(contactSchemaValidationSchema)}
-        onSubmit={(e) => console.log(e)}
+        onSubmit={(e, props) => {
+          alert("work under progress");
+          props.resetForm();
+        }}
         enableReinitialize={true}
       >
         {(formik) => (

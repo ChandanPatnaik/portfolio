@@ -11,7 +11,7 @@ const About = () => {
     <section
       style={isTorchOn ? backgroundStyle : {}}
       id="about"
-      className="w-full relative flex items-center justify-center overflow-hidden bg-dark-blue"
+      className="w-full scroll-m-10 relative flex items-center justify-center overflow-hidden bg-dark-blue"
     >
       {isTorchOn && (
         <div className="left-10 text-4xl font-semibold top-4 absolute w-fit text-dark-blue">

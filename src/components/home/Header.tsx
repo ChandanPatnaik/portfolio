@@ -40,7 +40,7 @@ const Header = () => {
       },
       {
         label: "Resume",
-        link: "/chandan-patnaik.pdf",
+        link: "/Chandan Ku. Patnaik.pdf",
         icon: <IoDocumentAttachOutline />,
       },
     ],
