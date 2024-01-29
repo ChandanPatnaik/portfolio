@@ -30,7 +30,7 @@ const About = () => {
       )}
       {isTorchOn && (
         <div className="right-20 text-xl font-semibold bottom-40 rotate-90 absolute text-dark-blue">
-          23 Dec 2022
+          21 Dec 2022
         </div>
       )}
       {isTorchOn && (

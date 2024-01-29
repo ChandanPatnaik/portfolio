@@ -95,7 +95,7 @@ const ProjectsList = () => {
         <div
           key={i}
           className="w-full bg-dark-slate border border-light-sky/10 flex flex-col gap-3 rounded-lg overflow-hidden"
-          onClick={() => alert("clicked")}
+          // onClick={() => alert("clicked")}
         >
           <div className="col-span-4">
             <img

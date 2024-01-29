@@ -18,15 +18,15 @@ export default function Home() {
   }, 2000);
 
   return (
-    <main className="">
-      <div className="text-milk/60 text-center font-bold w-full h-screen flex items-center justify-center text-xl p-8">
-        Work is in under process Please visit later or open in large screen
-      </div>
-      <section className="w-full hidden md:block">
-        {isLoading ? (
-          <Loader />
-        ) : (
-          <section className="w-full relative h-full">
+    <section className="w-full ">
+      {isLoading ? (
+        <Loader />
+      ) : (
+        <section>
+          <div className="md:hidden text-milk/60 text-center font-bold w-full h-screen flex items-center justify-center text-xl p-8">
+            Work is in under process Please visit later or open in large screen
+          </div>
+          <div className="w-full hidden md:block relative h-full">
             <div className="hidden md:block fixed z-[200] right-8 bottom-0">
               <SocialIconList />
             </div>
@@ -39,9 +39,9 @@ export default function Home() {
             <Projects />
             <Contact />
             <Footer />
-          </section>
-        )}
-      </section>
-    </main>
+          </div>
+        </section>
+      )}
+    </section>
   );
 }
