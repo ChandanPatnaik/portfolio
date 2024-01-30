@@ -22,25 +22,20 @@ export default function Home() {
       {isLoading ? (
         <Loader />
       ) : (
-        <section>
-          {/* <div className="md:hidden text-milk/60 text-center font-bold w-full h-screen flex items-center justify-center text-xl p-8">
-            Work is in under process Please visit later or open in large screen
-          </div> */}
-          <div className="w-full relative h-full">
-            <div className="hidden md:block fixed z-[200] right-8 bottom-0">
-              <SocialIconList />
-            </div>
-            <CustomCursor />
-            <section className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-screen">
-              <Header />
-              <Hero />
-            </section>
-            <About />
-            <Projects />
-            <Contact />
-            <Footer />
+        <div className="w-full relative h-full">
+          <div className="fixed z-[200] right-1 md:right-8 bottom-2">
+            <SocialIconList />
           </div>
-        </section>
+          <CustomCursor />
+          <section className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-[80vh] md:h-screen">
+            <Header />
+            <Hero />
+          </section>
+          <About />
+          <Projects />
+          <Contact />
+          <Footer />
+        </div>
       )}
     </section>
   );

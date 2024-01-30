@@ -63,7 +63,8 @@ const TextArea = () => {
           <br />
         </div>
         <div className="text-light-sky">
-          I <span className="italic font-normal">design</span> & develop .
+          I <span className="italic font-normal">design</span> & develop{" "}
+          <span className="md:hidden ">.</span>
           <span className="inline-block md:hidden">~</span>
           <HeroAnimatedText />
         </div>
