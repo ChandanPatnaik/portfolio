@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <section className="w-full flex items-center justify-center overflow-hidden">
-      <div className="w-5/6 md:w-4/5 lg:w-3/5 h-full flex items-center relative">
+      <div className="w-[88%] md:w-4/5 lg:w-3/5 h-full flex items-center relative">
         <TimeLine />
         <div className="py-5 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
           <motion.div

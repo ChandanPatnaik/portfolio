@@ -20,7 +20,7 @@ import { HeroAnimatedText } from "../common";
 const Hero = () => {
   return (
     <section className="w-full flex items-center justify-center h-full overflow-hidden">
-      <div className="w-5/6 md:w-4/5 lg:w-3/5 h-full flex items-center">
+      <div className="w-[88%] md:w-4/5 lg:w-3/5 h-full flex items-center">
         <TextArea />
       </div>
     </section>
@@ -63,8 +63,8 @@ const TextArea = () => {
           <br />
         </div>
         <div className="text-light-sky">
-          I <span className="italic font-normal">design</span> & develop{" "}
-          <span className="inline-block md:hidden">~ </span>
+          I <span className="italic font-normal">design</span> & develop .
+          <span className="inline-block md:hidden">~</span>
           <HeroAnimatedText />
         </div>
       </div>

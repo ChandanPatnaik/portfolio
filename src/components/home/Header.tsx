@@ -16,6 +16,11 @@ const Header = () => {
   const { push } = useRouter();
   const [toggle, setToggle] = useState(false);
   const currentScroll = useScrollPosition();
+  const handleLinkSession = (path: string) => {
+    push(path);
+    setToggle(false);
+  };
+
   const navigationData = useMemo(
     () => [
       {
@@ -102,6 +107,7 @@ const Header = () => {
                   key={curLabel.label}
                   target="_blank"
                   download={true}
+                  onClick={() => setToggle(!toggle)}
                 >
                   <li className="tracking-wider hover:text-light-yellow cursor-none common-transition">
                     <span className="font-[Roboto]">
@@ -129,7 +135,12 @@ const Header = () => {
             <ul className="grid grid-cols-5 gap-4 text-sm">
               {navigationData.map((curLabel, i) =>
                 i === navigationData?.length - 1 ? (
-                  <a href={curLabel.link} key={curLabel.label} download={true}>
+                  <a
+                    onClick={() => setToggle(!toggle)}
+                    href={curLabel.link}
+                    key={curLabel.label}
+                    download={true}
+                  >
                     <div className="w-full h-fit p-1 border border-light-yellow/10 rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] flex items-center justify-center flex-col">
                       <div className="text-xl text-milk/30">
                         {curLabel.icon}
@@ -140,16 +151,18 @@ const Header = () => {
                     </div>
                   </a>
                 ) : (
-                  <Link href={curLabel.link} key={curLabel.label}>
-                    <div className="w-full h-fit p-1 border border-light-yellow/10 rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] flex items-center justify-center flex-col">
-                      <div className="text-xl text-milk/30">
-                        {curLabel.icon}
-                      </div>
-                      <li className="text-[9px] text-milk/60 common-transition leading-4">
-                        {curLabel.label}
-                      </li>
-                    </div>
-                  </Link>
+                  // <Link href={curLabel.link} key={curLabel.label}>
+                  <div
+                    onClick={() => handleLinkSession(curLabel.link)}
+                    key={curLabel.label}
+                    className="w-full h-fit p-1 border border-light-yellow/10 rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] flex items-center justify-center flex-col"
+                  >
+                    <div className="text-xl text-milk/30">{curLabel.icon}</div>
+                    <li className="text-[9px] text-milk/60 common-transition leading-4">
+                      {curLabel.label}
+                    </li>
+                  </div>
+                  // </Link>
                 )
               )}
             </ul>

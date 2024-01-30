@@ -23,10 +23,10 @@ export default function Home() {
         <Loader />
       ) : (
         <section>
-          <div className="md:hidden text-milk/60 text-center font-bold w-full h-screen flex items-center justify-center text-xl p-8">
+          {/* <div className="md:hidden text-milk/60 text-center font-bold w-full h-screen flex items-center justify-center text-xl p-8">
             Work is in under process Please visit later or open in large screen
-          </div>
-          <div className="w-full hidden md:block relative h-full">
+          </div> */}
+          <div className="w-full relative h-full">
             <div className="hidden md:block fixed z-[200] right-8 bottom-0">
               <SocialIconList />
             </div>
