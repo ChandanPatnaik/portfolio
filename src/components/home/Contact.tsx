@@ -178,7 +178,6 @@ const ContactUsForm = () => {
       setOpenDialog(true);
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
     }
   };
 
