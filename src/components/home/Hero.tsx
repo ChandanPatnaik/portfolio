@@ -46,7 +46,6 @@ const TextArea = () => {
         <span className="text-lg text-light-sky"> Hi, my name is</span>
         <div className="text-light-sky">
           <span className="text-light-yellow">
-            {" "}
             {"Chandan Patnaik"?.split("")?.map((data, i) => (
               <motion.span
                 viewport={{ once: true }}
