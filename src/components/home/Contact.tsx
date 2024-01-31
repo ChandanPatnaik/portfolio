@@ -1,9 +1,23 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { Field, FieldProps, Form, Formik } from "formik";
+import { database } from "@/configs/firebase.config";
+import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";
 import { motion } from "framer-motion";
+import { useState } from "react";
 import * as Yup from "yup";
-import { CustomInput } from "../core";
+import { iconList } from "../common/SocialIconList";
+import { CustomDialog, CustomInput } from "../core";
+
+type ValueProps =
+  | {
+      name: string;
+      email: string;
+      message: string;
+    }
+  | {
+      [key: string]: string;
+    };
 
 const Contact = () => {
   return (
@@ -95,6 +109,8 @@ const ContactDetails = () => {
 };
 
 const ContactUsForm = () => {
+  const [openDialog, setOpenDialog] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const contactSchema = [
     {
       key: "1",
@@ -147,15 +163,70 @@ const ContactUsForm = () => {
     accumulator[currentValue.name] = currentValue.validationSchema;
     return accumulator;
   }, {} as { [key: string]: Yup.StringSchema<string> });
+
+  const handleSubmitSession = async (
+    values: ValueProps,
+    props: FormikHelpers<{ [key: string]: string }>
+  ) => {
+    try {
+      setIsLoading(true);
+      await database.push("query", {
+        ...values,
+      });
+      setIsLoading(false);
+      props.resetForm();
+      setOpenDialog(true);
+    } catch (error) {
+      setIsLoading(false);
+      console.log(error);
+    }
+  };
+
   return (
     <section className="md:col-span-4 lg:col-span-5 w-full">
+      <CustomDialog
+        PaperProps={{
+          style: {
+            borderRadius: 18,
+          },
+        }}
+        maxWidth="sm"
+        fullWidth
+        open={openDialog}
+        onClose={() => setOpenDialog(false)}
+      >
+        <div className="p-8 bg-dark-slate/80 flex w-full gap-4 items-center justify-center flex-col">
+          <div className="w-fit h-fit">
+            <img src="/success.gif" className="w-40" alt="success" />
+          </div>
+          <h1 className="text-3xl font-semibold text-milk/90">Thank You.</h1>
+          <p className="text-milk/70 text-center text-sm">
+            Your message has been received, and I will contact you shortly to If
+            you would like to connect with me on social media for updates, feel
+            free to follow me using the links below.
+          </p>
+
+          <div className="text-center w-full text-xl text-milk/80 font-semibold pt-5">
+            Follow Me
+          </div>
+          <div className="flex items-center gap-4 justify-center">
+            {iconList.map((curIcon) => (
+              <a href={curIcon.link} key={curIcon.link} target="_blank">
+                <div
+                  className={`${curIcon.color} w-10 h-10 text-white flex items-center justify-center rounded-lg text-lg`}
+                >
+                  {curIcon.icon}
+                </div>
+              </a>
+            ))}
+          </div>
+        </div>
+      </CustomDialog>
+
       <Formik
         initialValues={contactSchemaInitialValues}
         validationSchema={Yup.object(contactSchemaValidationSchema)}
-        onSubmit={(e, props) => {
-          alert("work under progress");
-          props.resetForm();
-        }}
+        onSubmit={handleSubmitSession}
         enableReinitialize={true}
       >
         {(formik) => (
@@ -208,9 +279,10 @@ const ContactUsForm = () => {
             <div className="flex flex-col">
               <button
                 type="submit"
+                disabled={isLoading}
                 className="w-full cursor-none col-span-full  py-2 bg-light-yellow font-semibold text-white rounded-sm"
               >
-                Submit Form
+                {isLoading ? "Loading..." : "Submit Form"}
               </button>
             </div>
           </Form>

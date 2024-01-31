@@ -6,26 +6,27 @@ import { FaLinkedinIn } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
 import { IoIosArrowDown } from "react-icons/io";
 
+export const iconList = [
+  {
+    icon: <FiGithub />,
+    link: "https://github.com/ChandanPatnaik",
+    color: "bg-blue-600 text-white",
+  },
+  {
+    icon: <FaLinkedinIn />,
+    link: "https://www.linkedin.com/in/chandan-patnaik/",
+    color: "bg-blue-400 text-white",
+  },
+  {
+    icon: <BiLogoGmail />,
+    link: "mailto:chandanpatnaik81@gmail.com",
+    color: "bg-orange-600 text-white",
+  },
+];
+
 const SocialIconList = () => {
   const [isVisible, setIsVisible] = useState(false);
 
-  const iconList = [
-    {
-      icon: <FiGithub />,
-      link: "https://github.com/ChandanPatnaik",
-      color: "bg-blue-600 text-white",
-    },
-    {
-      icon: <FaLinkedinIn />,
-      link: "https://www.linkedin.com/in/chandan-patnaik/",
-      color: "bg-blue-400 text-white",
-    },
-    {
-      icon: <BiLogoGmail />,
-      link: "mailto:chandanpatnaik81@gmail.com",
-      color: "bg-orange-600 text-white",
-    },
-  ];
   return (
     <div className="flex items-center flex-col gap-6">
       <div className="hidden md:flex flex-col gap-6">
@@ -63,7 +64,7 @@ const SocialIconList = () => {
                 viewport={{ once: true }}
                 initial={{ y: 40, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.7, delay: i * 0.5 }}
+                transition={{ duration: 0.4, delay: i * 0.5 }}
                 exit={{ y: 40, opacity: 0 }}
                 href={curIcon.link}
                 target="_blank"
