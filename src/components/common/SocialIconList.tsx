@@ -1,4 +1,5 @@
 "use client";
+import { motion } from "framer-motion";
 import { useState } from "react";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaLinkedinIn } from "react-icons/fa6";
@@ -29,26 +30,51 @@ const SocialIconList = () => {
     <div className="flex items-center flex-col gap-6">
       <div className="hidden md:flex flex-col gap-6">
         {iconList.map((curIcon, i) => (
-          <a href={curIcon.link} target="_blank" key={i}>
+          <motion.a
+            viewport={{ once: true }}
+            initial={{ y: 40, opacity: 0 }}
+            whileInView={{ y: 0, opacity: 1 }}
+            transition={{ duration: 0.5, delay: i * 0.2 }}
+            exit={{ y: 40, opacity: 0 }}
+            href={curIcon.link}
+            target="_blank"
+            key={i}
+          >
             <div className="text-milk/60 text-xl common-transition hover:-translate-y-[1px] hover:text-milk/90">
               {curIcon.icon}
             </div>
-          </a>
+          </motion.a>
         ))}
       </div>
-      <div className="hidden md:block h-28 w-0.5 bg-milk/60"></div>
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ height: 0, opacity: 0 }}
+        whileInView={{ height: "7rem", opacity: 1 }}
+        transition={{ duration: 0.7, delay: 0.7 }}
+        exit={{ height: 0, opacity: 0 }}
+        className="hidden md:block h-28 w-0.5 bg-milk/60"
+      ></motion.div>
 
       <div className="flex flex-col gap-2">
         {isVisible && (
           <div className="flex md:hidden flex-col gap-2">
             {iconList.map((curIcon, i) => (
-              <a href={curIcon.link} target="_blank" key={i}>
+              <motion.a
+                viewport={{ once: true }}
+                initial={{ y: 40, opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.7, delay: i * 0.5 }}
+                exit={{ y: 40, opacity: 0 }}
+                href={curIcon.link}
+                target="_blank"
+                key={i}
+              >
                 <div
                   className={`w-10 h-10 flex rounded-lg items-center justify-center text-xl common-transition hover:-translate-y-[1px] hover:text-milk/90 ${curIcon.color}`}
                 >
                   {curIcon.icon}
                 </div>
-              </a>
+              </motion.a>
             ))}
           </div>
         )}

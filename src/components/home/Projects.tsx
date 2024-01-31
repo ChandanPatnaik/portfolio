@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
-
+import { motion } from "framer-motion";
 const Projects = () => {
   return (
     <section
@@ -93,10 +93,14 @@ const ProjectsList = () => {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
       {projectList.map((curProject, i) => (
-        <div
+        <motion.div
+          viewport={{ once: true }}
+          initial={{ y: 40, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.9, delay: i * 0.5 }}
+          exit={{ y: 40, opacity: 0 }}
           key={i}
           className="w-full bg-dark-slate border border-light-sky/10 flex flex-col gap-3 rounded-lg overflow-hidden"
-          // onClick={() => alert("clicked")}
         >
           <div className="col-span-4">
             <img
@@ -121,7 +125,7 @@ const ProjectsList = () => {
               ))}
             </div>
           </div>
-        </div>
+        </motion.div>
       ))}
     </div>
   );
