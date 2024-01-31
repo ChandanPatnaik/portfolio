@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Head from "next/head";
 import "slick-carousel/slick/slick-theme.css";
 import "slick-carousel/slick/slick.css";
 import "./globals.css";
@@ -19,6 +20,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <Head>
+        <meta
+          property="og:image"
+          content="https://chandan-patnaik.vercel.app/project-placeholder.png"
+        />
+      </Head>
       <body className={inter.className}>{children}</body>
     </html>
   );

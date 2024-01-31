@@ -107,7 +107,6 @@ const Header = () => {
                   key={curLabel.label}
                   target="_blank"
                   download={true}
-                  onClick={() => setToggle(!toggle)}
                 >
                   <li className="tracking-wider hover:text-light-yellow cursor-none common-transition">
                     <span className="font-[Roboto]">
