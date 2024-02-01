@@ -21,6 +21,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <Head>
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:url"
+          content="https://chandan-patnaik.vercel.app/project-placeholder.png"
+        />
         <meta
           property="og:image"
           content="https://chandan-patnaik.vercel.app/project-placeholder.png"
