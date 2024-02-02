@@ -24,11 +24,11 @@ export default function RootLayout({
         <meta property="og:type" content="website" />
         <meta
           property="og:url"
-          content="https://chandan-patnaik.vercel.app/project-placeholder.png"
+          content="https://chandan-patnaik.vercel.app/og-image.png"
         />
         <meta
           property="og:image"
-          content="https://chandan-patnaik.vercel.app/project-placeholder.png"
+          content="https://chandan-patnaik.vercel.app/og-image.png"
         />
       </Head>
       <body className={inter.className}>{children}</body>
