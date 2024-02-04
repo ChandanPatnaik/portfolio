@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 const Footer = () => {
   return (
-    <section className="w-full flex items-center justify-center overflow-hidden">
+    <section className="w-full flex items-center h-fit justify-center overflow-hidden">
       <div className="w-[88%] md:w-4/5 lg:w-3/5 h-full flex items-center relative">
         <TimeLine />
         <div className="py-5 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
@@ -11,7 +11,7 @@ const Footer = () => {
             whileInView={{ x: 0 }}
             transition={{ duration: 0.3, delay: 0.3 }}
             exit={{ x: 40 }}
-            className="text-sm hidden md:flex items-center gap-2 font-light text-white/60 tracking-wide"
+            className="text-sm hidden md:flex items-center gap-2 text-white/60 tracking-wide"
           >
             <p>
               Develop and Design by{" "}
@@ -30,7 +30,7 @@ const Footer = () => {
             whileInView={{ x: 0 }}
             transition={{ duration: 0.3, delay: 0.3 }}
             exit={{ x: 40 }}
-            className="text-sm md:hidden flex items-center gap-2 font-light text-white/60 tracking-wide"
+            className="text-sm md:hidden flex items-center gap-2 text-white/60"
           >
             <p>
               Develop and Design by{" "}

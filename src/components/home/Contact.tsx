@@ -91,9 +91,13 @@ const ContactDetails = () => {
         >{`together?`}</motion.p>
       </div>
 
-      <div className="text-milk/60 tracking-wide md:text-lg ">
-        <p>Fill in the form or just use my contacts below.</p>
-        <p>‍If you need to put a project on the move, let’s work on it!</p>
+      <div className="text-milk/60 md:text-lg ">
+        <p className="leading-6">
+          Fill in the form or just use my contacts below.
+        </p>
+        <p className="leading-6">
+          ‍If you need to put a project on the move, let’s work on it!
+        </p>
       </div>
 
       <a
@@ -193,18 +197,20 @@ const ContactUsForm = () => {
         open={openDialog}
         onClose={() => setOpenDialog(false)}
       >
-        <div className="p-8 bg-dark-slate/80 flex w-full gap-4 items-center justify-center flex-col">
+        <div className="px-3 py-5 md:p-8 bg-dark-slate/80 flex w-full gap-2 md:gap-4 items-center justify-center flex-col">
           <div className="w-fit h-fit">
-            <img src="/success.gif" className="w-40" alt="success" />
+            <img src="/success.gif" className="w-24 md:w-40" alt="success" />
           </div>
-          <h1 className="text-3xl font-semibold text-milk/90">Thank You.</h1>
+          <h1 className="text-xl md:text-3xl font-semibold text-milk/90">
+            Thank You.
+          </h1>
           <p className="text-milk/70 text-center text-sm">
-            Your message has been received, and I will contact you shortly to If
+            Your message has been received, and I will contact you shortly. If
             you would like to connect with me on social media for updates, feel
             free to follow me using the links below.
           </p>
 
-          <div className="text-center w-full text-xl text-milk/80 font-semibold pt-5">
+          <div className="text-center w-full text-lg md:text-xl text-milk/80 font-semibold pt-0 md:pt-5">
             Follow Me
           </div>
           <div className="flex items-center gap-4 justify-center">
@@ -220,7 +226,6 @@ const ContactUsForm = () => {
           </div>
         </div>
       </CustomDialog>
-
       <Formik
         initialValues={contactSchemaInitialValues}
         validationSchema={Yup.object(contactSchemaValidationSchema)}

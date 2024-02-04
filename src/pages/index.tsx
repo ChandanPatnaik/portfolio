@@ -1,5 +1,5 @@
 import { Loader, SocialIconList } from "@/components/common";
-import { About, Contact, Hero, Projects } from "@/components/home";
+import { About, Contact, Expertise, Hero, Projects } from "@/components/home";
 import { PublicLayout } from "@/components/layouts";
 import { useState } from "react";
 
@@ -25,6 +25,7 @@ export default function Home() {
             <section className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-[80vh] md:h-screen">
               <Hero />
             </section>
+            <Expertise />
             <About />
             <Projects />
             <Contact />

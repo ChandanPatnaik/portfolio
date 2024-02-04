@@ -38,11 +38,6 @@ const About = () => {
           Books
         </div>
       )}
-      {isTorchOn && (
-        <div className="bottom-2 text-3xl font-semibold right-2 absolute text-dark-blue">
-          S
-        </div>
-      )}
 
       <div className="md:block hidden absolute right-5 top-5">
         <div className="bg-milk/20 pl-5 py-1 rounded-full flex items-center justify-center w-fit h-fit">
@@ -281,22 +276,22 @@ const AboutBlock = () => {
               <p className="">{`'Material UI',`}</p>
               <p className="">{`'React',`}</p>
               <p className="">{`'NextUI',`}</p>
-              <p className="">{`'Formik'`}</p>
-              <p className="">{`'Yup',`}</p>
             </div>
           </div>
           <div className="flex items-center gap-2 flex-wrap text-green-400">
+            <p className="">{`'Formik'`}</p>
+            <p className="">{`'Yup',`}</p>
             <p className="">{`'Firebase',`}</p>
             <p className="">{`'Next.js',`}</p>
             <p className="">{`'Node.js',`}</p>
             <p className="">{`'Express',`}</p>
             <p className="">{`'MongoDB',`}</p>
+          </div>
+          <div className="flex items-center gap-2 flex-wrap text-green-400">
             <p className="">{`'Mongoose',`}</p>
             <p className="">{`'Prisma',`}</p>
             <p className="">{`'REST'`}</p>
             <p className="">{`'Typescript',`}</p>
-          </div>
-          <div className="flex items-center gap-2 flex-wrap text-green-400">
             <p className="">{`'Postman',`}</p>
             <p className="">{`'Redis',`}</p>
             <p className="">{`'npm/yarn',`}</p>
@@ -319,7 +314,7 @@ const AboutBlock = () => {
 
 const ResponsiveAboutBlock = () => {
   return (
-    <section className="flex md:hidden flex-col relative text-sm">
+    <section className="flex md:hidden flex-col relative text-sm font-[Inter]">
       <div className="w-fit h-full absolute top-0 -left-10 md:-left-16">
         <div className="flex flex-col text-milk/30 tracking-wide leading-5 text-xs md:text-sm">
           {[...Array(32)].map((cur, i) => (
@@ -510,8 +505,8 @@ const ResponsiveAboutBlock = () => {
               <p className="">{`'Tailwind CSS',`}</p>
             </div>
           </div>
-          <div className="flex items-center gap-x-1.5 flex-wrap text-green-400">
-            <p className="">{`'Material UI',`}</p>
+          <div className="flex items-center gap-x-1.5 flex-wrap text-green-400 ">
+            <p className="w-fit">{`'Material UI',`}</p>
             <p className="">{`'React',`}</p>
             <p className="">{`'NextUI',`}</p>
             <p className="">{`'Formik'`}</p>
@@ -523,10 +518,10 @@ const ResponsiveAboutBlock = () => {
             <p className="">{`'MongoDB',`}</p>
             <p className="">{`'Mongoose',`}</p>
             <p className="">{`'Prisma',`}</p>
-            <p className="">{`'REST'`}</p>
             <p className="">{`'Typescript',`}</p>
           </div>
           <div className="flex items-center gap-x-1.5 flex-wrap text-green-400">
+            <p className="">{`'REST'`}</p>
             <p className="">{`'Postman',`}</p>
             <p className="">{`'Redis',`}</p>
             <p className="">{`'npm/yarn',`}</p>

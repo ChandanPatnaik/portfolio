@@ -61,9 +61,7 @@ const TextArea = () => {
           <br />
         </div>
         <div className="text-light-sky font-[Inter]">
-          I design & develop <span className="md:hidden ">.</span>
-          <span className="inline-block md:hidden">~</span>
-          <HeroAnimatedText />
+          I design & develop <HeroAnimatedText />
         </div>
       </div>
       <motion.div
@@ -75,9 +73,9 @@ const TextArea = () => {
         className="text-sm md:text-base font-light text-white/60"
       >
         I am a MERN stack developer with a focus on crafting outstanding digital
-        experiences. <br className="hidden md:block" /> Currently, I am
+        experiences. <br className="hidden 2xl:block" /> Currently, I am
         dedicated to developing accessible and human-centered products,
-        <br className="hidden md:block" /> contributing to advancements in the
+        <br className="hidden 2xl:block" /> contributing to advancements in the
         tech industry.
       </motion.div>
       <div className="overflow-hidden">
