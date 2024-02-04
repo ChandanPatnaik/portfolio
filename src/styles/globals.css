@@ -32,7 +32,7 @@ body {
   margin: 0;
   background-color: #14121c;
   color: black;
-  font-family: "Inter", sans-serif;
+  font-family: "Roboto Mono", sans-serif;
   scroll-behavior: smooth !important;
   cursor: none;
 }

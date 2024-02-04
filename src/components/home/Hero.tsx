@@ -44,7 +44,7 @@ const TextArea = () => {
       <div className="flex flex-col md:gap-3 lg:gap-4">
         <span className="text-lg text-light-sky"> Hi, my name is</span>
         <div className="text-light-sky">
-          <span className="text-light-yellow">
+          <span className="text-light-yellow font-[Inter]">
             {"Chandan Patnaik"?.split("")?.map((data, i) => (
               <motion.span
                 viewport={{ once: true }}
@@ -60,9 +60,8 @@ const TextArea = () => {
           </span>{" "}
           <br />
         </div>
-        <div className="text-light-sky">
-          I <span className="italic font-normal">design</span> & develop{" "}
-          <span className="md:hidden ">.</span>
+        <div className="text-light-sky font-[Inter]">
+          I design & develop <span className="md:hidden ">.</span>
           <span className="inline-block md:hidden">~</span>
           <HeroAnimatedText />
         </div>

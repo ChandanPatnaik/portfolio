@@ -14,7 +14,7 @@ const About = () => {
       className="w-full scroll-m-10 relative flex items-center justify-center overflow-hidden bg-dark-blue"
     >
       {isTorchOn && (
-        <div className="left-10 text-4xl font-semibold top-4 absolute w-fit text-dark-blue">
+        <div className="left-10 text-xl font-semibold top-4 absolute w-fit text-dark-blue">
           I am a loop that can be endless, yet I always have an exit. What am I?
         </div>
       )}
