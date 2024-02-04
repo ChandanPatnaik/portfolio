@@ -72,7 +72,7 @@ const TextArea = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.07 }}
         exit={{ opacity: 0, y: 10 }}
-        className="text-sm md:text-base font-light text-white/50"
+        className="text-sm md:text-base font-light text-white/60"
       >
         I am a MERN stack developer with a focus on crafting outstanding digital
         experiences. <br className="hidden md:block" /> Currently, I am
