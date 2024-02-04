@@ -1,6 +1,4 @@
-"use client";
 import { Loader, SocialIconList } from "@/components/common";
-import { CustomCursor } from "@/components/core";
 import {
   About,
   Contact,
@@ -26,7 +24,6 @@ export default function Home() {
           <div className="fixed z-[200] right-1 md:right-8 bottom-2">
             <SocialIconList />
           </div>
-          <CustomCursor />
           <section className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-[80vh] md:h-screen">
             <Header />
             <Hero />

@@ -1,5 +1,3 @@
-"use client";
-
 import { useScrollPosition } from "@/hooks";
 import { Collapse } from "@mui/material";
 import { motion } from "framer-motion";

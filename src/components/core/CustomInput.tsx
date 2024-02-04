@@ -40,7 +40,6 @@
  * Created by Rudra
  ****/
 
-"use client";
 import {
   Autocomplete,
   Box,

@@ -1,5 +1,4 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
 
 import { database } from "@/configs/firebase.config";
 import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";

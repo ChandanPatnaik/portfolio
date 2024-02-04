@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-"use client";
+
 import { useSpotLight, useTorch } from "@/hooks";
 import { LightSwitch } from "../common";
 
