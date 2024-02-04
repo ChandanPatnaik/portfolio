@@ -5,8 +5,8 @@ import Header from "./Header";
 
 const PublicLayout: FC<PublicLayoutProps> = ({
   children = <></>,
-  title,
-  description,
+  title = "Chandan Patnaik | Full Stack Developer",
+  description = "MERN stack developer passionate about creating web applications with a focus on user experience.",
   ogImage,
 }) => {
   return (
