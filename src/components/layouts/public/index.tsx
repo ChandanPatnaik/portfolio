@@ -12,13 +12,15 @@ const PublicLayout: FC<PublicLayoutProps> = ({
   return (
     <>
       <Head>
-        <meta property="og:type" content="website" />
         <title>{title}</title>
         <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:type" content="website" />
         <meta
           property="og:image"
           content={ogImage || "https://chandan-patnaik.vercel.app/og-image.png"}
         />
+        <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
         <Header />
