@@ -1,18 +1,7 @@
+import { heroSectionIconsArray, heroSliderSettings } from "@/locals";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRef } from "react";
-import { DiMongodb } from "react-icons/di";
-import {
-  FaCss3,
-  FaHtml5,
-  FaNodeJs,
-  FaNpm,
-  FaReact,
-  FaYarn,
-} from "react-icons/fa6";
-import { IoLogoJavascript } from "react-icons/io";
-import { SiExpress, SiPostman, SiTailwindcss } from "react-icons/si";
-import { TbBrandNextjs } from "react-icons/tb";
 import Slider from "react-slick";
 import { HeroAnimatedText } from "../common";
 
@@ -117,95 +106,11 @@ const TimeLine = () => {
 
 const HeroSlider = () => {
   const sliderRef = useRef<Slider>(null);
-  const settings = {
-    dots: false,
-    infinite: true,
-    slidesToShow: 8,
-    slidesToScroll: 1,
-    autoplay: true,
-    speed: 10000,
-    cssEase: "linear",
-    autoplaySpeed: 0,
-    pauseOnHover: false,
-    arrows: false,
-    ltr: true,
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 5,
-        },
-      },
-      {
-        breakpoint: 600,
-        settings: {
-          slidesToShow: 5,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 3,
-        },
-      },
-    ],
-  };
-
-  const iconsArray = [
-    {
-      icon: <FaHtml5 />,
-      title: "HTML",
-    },
-    {
-      icon: <FaCss3 />,
-      title: "HTML",
-    },
-    {
-      icon: <IoLogoJavascript />,
-      title: "Javascript",
-    },
-    {
-      icon: <SiTailwindcss />,
-      title: "Tailwind CSS",
-    },
-    {
-      icon: <FaNodeJs />,
-      title: "Node.js",
-    },
-    {
-      icon: <SiExpress />,
-      title: "Express",
-    },
-    {
-      icon: <DiMongodb />,
-      title: "MongoDB",
-    },
-    {
-      icon: <FaReact />,
-      title: "React",
-    },
-    {
-      icon: <TbBrandNextjs />,
-      title: "Next.js",
-    },
-    {
-      icon: <SiPostman />,
-      title: "Postman",
-    },
-    {
-      icon: <FaNpm />,
-      title: "npm",
-    },
-    {
-      icon: <FaYarn />,
-      title: "yarn",
-    },
-  ];
 
   return (
     <section className="w-full">
-      <Slider ref={sliderRef} {...settings}>
-        {iconsArray.map((curIcon) => (
+      <Slider ref={sliderRef} {...heroSliderSettings}>
+        {heroSectionIconsArray.map((curIcon) => (
           <div
             key={curIcon.title}
             className="!flex !flex-col !items-center !justify-center text-milk/20 text-3xl md:text-4xl"

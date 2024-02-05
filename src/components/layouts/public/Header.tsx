@@ -1,15 +1,11 @@
 import { useScrollPosition } from "@/hooks";
+import { navigationData } from "@/locals";
 import { Collapse } from "@mui/material";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { useMemo, useState } from "react";
-import { BiCommentDetail } from "react-icons/bi";
+import { useState } from "react";
 import { BsMenuButtonFill } from "react-icons/bs";
-import { FaNetworkWired } from "react-icons/fa6";
-import { IoIosContact } from "react-icons/io";
-import { IoDocumentAttachOutline } from "react-icons/io5";
-import { MdRestartAlt } from "react-icons/md";
 const Header = () => {
   const { push } = useRouter();
   const [toggle, setToggle] = useState(false);
@@ -19,36 +15,6 @@ const Header = () => {
     setToggle(false);
   };
 
-  const navigationData = useMemo(
-    () => [
-      {
-        label: "Start",
-        link: "/",
-        icon: <MdRestartAlt />,
-      },
-      {
-        label: "About",
-        link: "#about",
-        icon: <BiCommentDetail />,
-      },
-      {
-        label: "Projects",
-        link: "#projects",
-        icon: <FaNetworkWired />,
-      },
-      {
-        label: "Contact",
-        link: "#contact",
-        icon: <IoIosContact />,
-      },
-      {
-        label: "Resume",
-        link: "/Chandan Ku. Patnaik.pdf",
-        icon: <IoDocumentAttachOutline />,
-      },
-    ],
-    []
-  );
   return (
     <section
       className={`fixed top-0 w-full z-[200] ${

@@ -1,6 +1,7 @@
 import { Loader, SocialIconList } from "@/components/common";
 import { About, Contact, Expertise, Hero, Projects } from "@/components/home";
 import { PublicLayout } from "@/components/layouts";
+import Head from "next/head";
 import { useState } from "react";
 
 export default function Home() {
@@ -8,16 +9,27 @@ export default function Home() {
   setInterval(() => {
     setIsLoading(false);
   }, 2000);
+  let title = "Chandan Patnaik | Full Stack Developer";
+  let description =
+    "MERN stack developer passionate about creating web applications with a focus on user experience.";
 
   return (
     <section className="w-full">
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content={"https://chandan-patnaik.vercel.app/og-image.png"}
+        />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       {isLoading ? (
         <Loader />
       ) : (
-        <PublicLayout
-          title="Chandan Patnaik | Full Stack Developer"
-          description="MERN stack developer passionate about creating web applications with a focus on user experience."
-        >
+        <PublicLayout title={title} description={description}>
           <div className="w-full relative h-full">
             <div className="fixed z-[200] right-1 md:right-8 bottom-2">
               <SocialIconList />

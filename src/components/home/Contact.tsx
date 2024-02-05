@@ -92,11 +92,9 @@ const ContactDetails = () => {
       </div>
 
       <div className="text-milk/60 md:text-lg ">
-        <p className="leading-6">
-          Fill in the form or just use my contacts below.
-        </p>
-        <p className="leading-6">
-          ‍If you need to put a project on the move, let’s work on it!
+        <p className="leading-6 md:leading-7">
+          Fill in the form or just use my contacts below. If you need to put a
+          project on the move, let’s work on it!
         </p>
       </div>
 

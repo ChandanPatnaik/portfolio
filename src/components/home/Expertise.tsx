@@ -1,8 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
+import { expertiseData } from "@/locals";
 
-import { CiDesktop } from "react-icons/ci";
-import { FaReact } from "react-icons/fa6";
-import { SiExpress } from "react-icons/si";
 const Expertise = () => {
   return (
     <section
@@ -36,38 +34,6 @@ const TimeLine = () => {
 };
 
 const ExpertiseDetails = () => {
-  const expertiseData = [
-    {
-      heading: (
-        <div>
-          Software <br /> Development
-        </div>
-      ),
-      description:
-        "Experienced in both function and OOP: Javascript, Typescript, Python",
-      icon: <CiDesktop />,
-    },
-    {
-      heading: (
-        <div>
-          Frontend Dev <br /> React, NextJS
-        </div>
-      ),
-      description:
-        "Over 2 years of development experience in HTML, CSS, JS, React and NextJS frameworks.",
-      icon: <FaReact />,
-    },
-    {
-      heading: (
-        <div>
-          Backend Dev <br /> Node, Express
-        </div>
-      ),
-      description:
-        "Experienced in crafting efficient cross-platform backends using Node.js and Express.",
-      icon: <SiExpress />,
-    },
-  ];
   return (
     <section
       className={`w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md h-full md:border-2 border-milk/30 `}
@@ -89,7 +55,9 @@ const ExpertiseDetails = () => {
             </div>
             <div className="flex flex-col">
               <p className="text-milk/50">{`anonymous(){`}</p>
-              <p className="pl-5 py-1 text-milk/80">{curStack.description}</p>
+              <p className="pl-4 text-sm md:text-[15px] py-1 text-milk/80">
+                {curStack.description}
+              </p>
               <p className="text-milk/50">{`}`}</p>
             </div>
           </div>
