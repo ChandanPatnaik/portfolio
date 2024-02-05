@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { experienceData } from "@/locals";
 import { AiOutlineMinus } from "react-icons/ai";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Experience = () => {
   return (
@@ -25,8 +26,27 @@ const Experience = () => {
                 </div>
                 <div className="flex flex-col gap-3 w-full md:w-3/4 text-milk/90">
                   <div className="flex flex-col md:flex-row md:items-center gap-1">
-                    <p>
-                      {curExp.role} - {curExp.company}
+                    <p className="hidden md:flex gap-2">
+                      {curExp.role} -{" "}
+                      <a
+                        href={curExp.companySite}
+                        target="_blank"
+                        className="flex items-center gap-2 cursor-none"
+                      >
+                        {curExp.company}
+                        <FaArrowRightLong className="-rotate-45" />
+                      </a>
+                    </p>
+                    <p className=" md:hidden gap-2">
+                      {curExp.role} -{" "}
+                      <a
+                        href={curExp.companySite}
+                        target="_blank"
+                        className="flex items-center gap-2 cursor-none"
+                      >
+                        {curExp.company}
+                        <FaArrowRightLong className="-rotate-45" />
+                      </a>
                     </p>
                   </div>
                   <p className="text-sm md:text-[15px] text-milk/70 font-[Inter] md:leading-6">
