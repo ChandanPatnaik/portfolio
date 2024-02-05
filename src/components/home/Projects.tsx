@@ -40,7 +40,7 @@ const Projects = () => {
       <div className="w-[88%] md:w-4/5 lg:w-3/5 h-full flex items-center relative">
         <TimeLine />
         <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
-          <div className="text-base font-light text-white/40 tracking-wide">{`Projects />`}</div>
+          <div className="text-base font-light text-white/60 tracking-wide">{`Projects />`}</div>
 
           <ProjectsList />
         </div>

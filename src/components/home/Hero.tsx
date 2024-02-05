@@ -14,6 +14,7 @@ const Hero = () => {
     </section>
   );
 };
+
 export default Hero;
 
 const TextArea = () => {
@@ -26,7 +27,7 @@ const TextArea = () => {
         whileInView={{ x: 0 }}
         transition={{ duration: 0.3, delay: 0.1 }}
         exit={{ x: 40 }}
-        className="text-base font-light text-white/40 tracking-wide"
+        className="text-base font-light text-white/60 tracking-wide"
       >
         {`Start />`}
       </motion.div>
@@ -59,7 +60,7 @@ const TextArea = () => {
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7, delay: 0.07 }}
         exit={{ opacity: 0, y: 10 }}
-        className="text-sm md:text-base font-light text-white/60"
+        className="text-sm md:text-base text-milk/60 font-normal"
       >
         I am a MERN stack developer with a focus on crafting outstanding digital
         experiences. <br className="hidden 2xl:block" /> Currently, I am

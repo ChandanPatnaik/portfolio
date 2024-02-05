@@ -63,7 +63,7 @@ const SocialIconList = () => {
                 viewport={{ once: true }}
                 initial={{ y: 40, opacity: 0 }}
                 whileInView={{ y: 0, opacity: 1 }}
-                transition={{ duration: 0.4, delay: i * 0.5 }}
+                transition={{ duration: 0.3, delay: i * 0.2 }}
                 exit={{ y: 40, opacity: 0 }}
                 href={curIcon.link}
                 target="_blank"

@@ -1,5 +1,12 @@
 import { Loader, SocialIconList } from "@/components/common";
-import { About, Contact, Expertise, Hero, Projects } from "@/components/home";
+import {
+  About,
+  Contact,
+  Experience,
+  Expertise,
+  Hero,
+  Projects,
+} from "@/components/home";
 import { PublicLayout } from "@/components/layouts";
 import Head from "next/head";
 import { useState } from "react";
@@ -38,6 +45,7 @@ export default function Home() {
               <Hero />
             </section>
             <Expertise />
+            <Experience />
             <About />
             <Projects />
             <Contact />

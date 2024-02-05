@@ -132,6 +132,52 @@ export const heroSliderSettings = {
   ],
 };
 
+// experience data
+export const experienceData = [
+  {
+    role: "MERN Stack Developer",
+    company: "SearchingYard Group",
+    companySite: "https://www.searchingyard.com/",
+    description:
+      "Spearheaded multiple MERN stack projects, overseeing both frontend and backend development to create scalable applications in diverse domains like CMS platforms, ERP systems, online gaming, real estate, and e-commerce. Through close collaboration and mentorship, I provided leadership, emphasizing the importance of best practices. This included building tools to enhance the developer experience and streamlined workflows and improved code quality.",
+    startDate: "Nov 2022",
+    endDate: "Current",
+    skills: [
+      "Javascript",
+      "Typescript",
+      "React",
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Prisma",
+      "Mongoose",
+      "AWS EC2",
+      "AWS S3",
+    ],
+  },
+  {
+    role: "Frontend Developer Intern",
+    company: "SearchingYard Group",
+    companySite: "https://www.searchingyard.com/",
+    description:
+      "Made significant contributions to developing and improving web applications, including work on diverse projects such as an inventory app, university CMS, and e-commerce, by demonstrating strong proficiency in React, Next.js, JavaScript, and TypeScript. Effectively applying these skills during the internship, I played a key role in enhancing web applications.",
+    startDate: "June 2022",
+    endDate: "Nov 2022",
+    skills: [
+      "HTML",
+      "CSS",
+      "Javascript",
+      "Typescript",
+      "React",
+      "Next.js",
+      "TailwindCss",
+      "Material UI",
+      "Framer Motion",
+    ],
+  },
+];
+
 // project list
 export const projectLists = [
   {
@@ -164,6 +210,7 @@ export const projectLists = [
   // },
 ];
 
+// expertise data
 export const expertiseData = [
   {
     heading: (
