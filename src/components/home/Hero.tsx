@@ -62,7 +62,7 @@ const TextArea = () => {
         exit={{ opacity: 0, y: 10 }}
         className="text-sm md:text-base text-milk/60 font-normal"
       >
-        I am a MERN stack developer with a focus on crafting outstanding digital
+        I am a full stack developer with a focus on crafting outstanding digital
         experiences. <br className="hidden 2xl:block" /> Currently, I am
         dedicated to developing accessible and human-centered products,
         <br className="hidden 2xl:block" /> contributing to advancements in the

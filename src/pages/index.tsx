@@ -18,7 +18,7 @@ export default function Home() {
   }, 2000);
   let title = "Chandan Patnaik | Full Stack Developer";
   let description =
-    "MERN stack developer passionate about creating web applications with a focus on user experience.";
+    "Full stack developer passionate about creating web applications with a focus on user experience.";
 
   return (
     <section className="w-full">
@@ -46,8 +46,8 @@ export default function Home() {
             </section>
             <Expertise />
             <Experience />
-            <About />
             <Projects />
+            <About />
             <Contact />
           </div>
         </PublicLayout>

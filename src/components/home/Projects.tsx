@@ -2,12 +2,13 @@
 
 import { projectLists } from "@/locals";
 import { motion } from "framer-motion";
+import { FaArrowRightLong } from "react-icons/fa6";
 
 const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full scroll-m-10 relative bg-light-sky/5 flex items-center justify-center overflow-hidden  shadow-[0_0_76px_0_rgba(10,7,22,0.004)]"
+      className="w-full scroll-m-10 relative bg-light-sky/10 flex items-center justify-center overflow-hidden  shadow-[0_0_76px_0_rgba(10,7,22,0.004)]"
     >
       <div className="absolute top-20 text-5xl md:text-7xl lg:text-9xl font-semibold text-milk/5 left-10">
         Websites
@@ -63,7 +64,7 @@ const TimeLine = () => {
 
 const ProjectsList = () => {
   return (
-    <div className="w-full grid grid-cols-1 md:grid-cols-2 gap-5">
+    <div className="w-full flex flex-col gap-5">
       {projectLists.map((curProject, i) => (
         <motion.div
           viewport={{ once: true }}
@@ -72,21 +73,25 @@ const ProjectsList = () => {
           transition={{ duration: 0.9, delay: i * 0.5 }}
           exit={{ y: 40, opacity: 0 }}
           key={i}
-          className="w-full bg-dark-slate border border-light-sky/10 flex flex-col gap-3 rounded-lg overflow-hidden"
+          className="w-full hover:!-translate-y-1 transition-all duration-200 ease-linear p-3 flex gap-5 rounded-lg overflow-hidden"
         >
-          <div className="col-span-4">
+          <div className="w-1/4">
             <img
               src={curProject.image}
               alt={curProject.name}
-              className="w-full h-full"
+              className="w-full border border-light-yellow/10 rounded-sm h-28 object-cover"
             />
           </div>
-          <div className="flex col-span-8 flex-col p-3 gap-1 md:gap-2">
-            <p className="text-lg text-milk/80 font-semibold">
-              {curProject.name}
-            </p>
+          <div className="flex w-3/4 flex-col gap-1 md:gap-2">
+            <a
+              href={curProject.link}
+              target="_blank"
+              className="text-lg flex items-center gap-2 text-milk/80 font-semibold"
+            >
+              {curProject.name} <FaArrowRightLong className="-rotate-45" />
+            </a>
             <p className="text-milk/70 text-sm">{curProject.description}</p>
-            <div className="flex items-center gap-2 md:gap-3 pt-2 overflow-y-scroll w-full">
+            <div className="flex items-center flex-wrap gap-2 md:gap-3 pt-2 overflow-y-scroll w-full">
               {curProject.tech.map((curTech) => (
                 <div
                   className=" border-milk/20 border text-milk/70 md:text-xs rounded-full px-2 text-[10px] md:px-3 py-1"

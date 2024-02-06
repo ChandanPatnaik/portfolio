@@ -135,11 +135,11 @@ export const heroSliderSettings = {
 // experience data
 export const experienceData = [
   {
-    role: "MERN Stack Developer",
+    role: "Full Stack Developer",
     company: "SearchingYard Group",
     companySite: "https://www.searchingyard.com/",
     description:
-      "Spearheaded multiple MERN stack projects, overseeing both frontend and backend development to create scalable applications in diverse domains like CMS platforms, ERP systems, online gaming, real estate, and e-commerce. Through close collaboration and mentorship, I provided leadership, emphasizing the importance of best practices. This included building tools to enhance the developer experience and streamlined workflows and improved code quality.",
+      "Spearheaded multiple Full stack projects, overseeing both frontend and backend development to create scalable applications in diverse domains like CMS platforms, ERP systems, online gaming, real estate, and e-commerce. Through close collaboration and mentorship, I provided leadership, emphasizing the importance of best practices. This included building tools to enhance the developer experience and streamlined workflows and improved code quality.",
     startDate: "Nov 2022",
     endDate: "Current",
     skills: [
@@ -172,6 +172,7 @@ export const experienceData = [
       "React",
       "Next.js",
       "TailwindCss",
+      "Firebase",
       "Material UI",
       "Framer Motion",
     ],
@@ -184,30 +185,24 @@ export const projectLists = [
     name: "Portfolio",
     description:
       "Explore my portfolio crafted with Next.js, Tailwind CSS, and Framer Motion. Discover sleek designs, responsive layouts, and captivating animations.",
-    image: "/project-placeholder.png",
-    tech: ["Next.js", "TailwindCSS", "Framer Motion"],
+    image: "/projects/portfolio.png",
+    tech: ["Next.js", "TailwindCSS", "Framer Motion", "Vercel", "Firebase"],
+    link: "https://chandan-patnaik.vercel.app/",
   },
-  // {
-  //   name: "Build a Spotify Connected App",
-  //   description:
-  //     "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-  //   image: "/project-placeholder.png",
-  //   tech: ["React", "Express", "Node.js", "MongoDB"],
-  // },
-  // {
-  //   name: "Build a Spotify Connected App",
-  //   description:
-  //     "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-  //   image: "/project-placeholder.png",
-  //   tech: ["React", "Express", "Node.js", "MongoDB"],
-  // },
-  // {
-  //   name: "Build a Spotify Connected App",
-  //   description:
-  //     "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
-  //   image: "/project-placeholder.png",
-  //   tech: ["React", "Express", "Node.js", "MongoDB"],
-  // },
+  {
+    name: "Airbnb Clone",
+    description:
+      "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
+    image: "/projects/airbnb.png",
+    tech: [
+      "Next.js",
+      "Express",
+      "Node.js",
+      "MongoDB",
+      "Mongoose",
+      "TailwindCSS",
+    ],
+  },
 ];
 
 // expertise data
