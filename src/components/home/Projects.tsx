@@ -73,16 +73,16 @@ const ProjectsList = () => {
           transition={{ duration: 0.9, delay: i * 0.5 }}
           exit={{ y: 40, opacity: 0 }}
           key={i}
-          className="w-full hover:!-translate-y-1 transition-all duration-200 ease-linear p-3 flex gap-5 rounded-lg overflow-hidden"
+          className="w-full flex-col md:flex-row hover:!-translate-y-1 transition-all duration-200 ease-linear md:p-3 flex gap-2 md:gap-5 rounded-lg overflow-hidden"
         >
-          <div className="w-1/4">
+          <div className="w-full md:w-1/4">
             <img
               src={curProject.image}
               alt={curProject.name}
-              className="w-full border border-light-yellow/10 rounded-sm h-28 object-cover"
+              className="w-52 md:w-full border border-light-yellow/10 rounded-sm h-28 object-cover"
             />
           </div>
-          <div className="flex w-3/4 flex-col gap-1 md:gap-2">
+          <div className="flex w-full md:w-3/4 flex-col gap-1 md:gap-2">
             <a
               href={curProject.link}
               target="_blank"
