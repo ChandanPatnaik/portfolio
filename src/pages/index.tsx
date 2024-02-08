@@ -16,9 +16,9 @@ export default function Home() {
   setInterval(() => {
     setIsLoading(false);
   }, 2000);
-  let title = "Chandan Patnaik | Full Stack Developer";
+  let title = "Chandan Patnaik | Full Stack Web Developer";
   let description =
-    "Full stack developer passionate about creating web applications with a focus on user experience.";
+    "Full stack Web developer passionate about creating web applications with a focus on user experience.";
 
   return (
     <section className="w-full">

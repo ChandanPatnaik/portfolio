@@ -135,7 +135,7 @@ export const heroSliderSettings = {
 // experience data
 export const experienceData = [
   {
-    role: "Full Stack Developer",
+    role: "Full Stack Web Developer",
     company: "SearchingYard Group",
     companySite: "https://www.searchingyard.com/",
     description:
