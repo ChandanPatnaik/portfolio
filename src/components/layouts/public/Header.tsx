@@ -65,7 +65,7 @@ const Header = () => {
 
           <ul className="hidden md:flex items-center gap-12 text-sm">
             {navigationData.map((curLabel, i) =>
-              i === navigationData?.length - 1 ? (
+              curLabel.isOuterLink ? (
                 <a
                   href={curLabel.link}
                   key={curLabel.label}
@@ -97,7 +97,7 @@ const Header = () => {
           <div className="w-full pt-5">
             <ul className="grid grid-cols-5 gap-4 text-sm">
               {navigationData.map((curLabel, i) =>
-                i === navigationData?.length - 1 ? (
+                curLabel.isOuterLink ? (
                   <a
                     onClick={() => setToggle(!toggle)}
                     href={curLabel.link}
@@ -114,7 +114,6 @@ const Header = () => {
                     </div>
                   </a>
                 ) : (
-                  // <Link href={curLabel.link} key={curLabel.label}>
                   <div
                     onClick={() => handleLinkSession(curLabel.link)}
                     key={curLabel.label}
@@ -125,7 +124,6 @@ const Header = () => {
                       {curLabel.label}
                     </li>
                   </div>
-                  // </Link>
                 )
               )}
             </ul>

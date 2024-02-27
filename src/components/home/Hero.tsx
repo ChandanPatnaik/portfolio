@@ -7,8 +7,8 @@ import { HeroAnimatedText } from "../common";
 
 const Hero = () => {
   return (
-    <section className="w-full flex items-center justify-center h-full overflow-hidden">
-      <div className="w-[88%] md:w-4/5 lg:w-3/5 h-full flex items-center">
+    <section className="w-full  main-container flex items-center justify-center h-full overflow-hidden">
+      <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center">
         <TextArea />
       </div>
     </section>
@@ -111,10 +111,10 @@ const HeroSlider = () => {
   return (
     <section className="w-full">
       <Slider ref={sliderRef} {...heroSliderSettings}>
-        {heroSectionIconsArray.map((curIcon) => (
+        {heroSectionIconsArray.map((curIcon, i) => (
           <div
             key={curIcon.title}
-            className="!flex !flex-col !items-center !justify-center text-milk/20 text-3xl md:text-4xl"
+            className={`!flex !flex-col !items-center !justify-center text-milk/20 text-3xl md:text-4xl`}
           >
             <p className="">{curIcon.icon}</p>
             <p className="text-xs">{curIcon.title}</p>

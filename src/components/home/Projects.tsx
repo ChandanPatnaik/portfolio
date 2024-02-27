@@ -8,42 +8,44 @@ const Projects = () => {
   return (
     <section
       id="projects"
-      className="w-full scroll-m-10 relative bg-light-sky/10 flex items-center justify-center overflow-hidden  shadow-[0_0_76px_0_rgba(10,7,22,0.004)]"
+      className="shadow-[0_0_76px_0_rgba(10,7,22,0.004)] bg-light-sky/10 "
     >
-      <div className="absolute top-20 text-5xl md:text-7xl lg:text-9xl font-semibold text-milk/5 left-10">
-        Websites
-      </div>
-      <div className="absolute bottom-10 text-7xl font-semibold text-milk/5 left-10">
-        HTML
-      </div>
-      <div className="absolute top-20 text-5xl md:text-7xl lg:text-9xl font-semibold text-milk/5 right-10">
-        CSS
-      </div>
-      <div className="absolute top-0 text-3xl lg:text-5xl font-semibold text-milk/5 left-10">
-        Javascript
-      </div>
-      <div className="absolute top-1/2 text-7xl font-semibold text-milk/5 left-32">
-        Typescript
-      </div>
-      <div className="absolute top-1/3 text-6xl font-semibold text-milk/5 right-20">
-        Node.js
-      </div>
-      <div className="absolute bottom-1/3 text-4xl md:text-6xl font-semibold text-milk/5 right-2">
-        React
-      </div>
-      <div className="absolute bottom-20 text-4xl md:text-6xl font-semibold text-milk/5 right-44">
-        Next.js
-      </div>
-      <div className="absolute bottom-44 text-7xl font-semibold text-milk/5 left-1/2">
-        Tailwind CSS
-      </div>
+      <div className="w-full scroll-m-10 relative main-container flex items-center justify-center overflow-hidden">
+        <div className="absolute top-20 text-5xl md:text-7xl lg:text-9xl font-semibold text-milk/5 left-10">
+          Websites
+        </div>
+        <div className="absolute bottom-10 text-7xl font-semibold text-milk/5 left-10">
+          HTML
+        </div>
+        <div className="absolute top-20 text-5xl md:text-7xl lg:text-9xl font-semibold text-milk/5 right-10">
+          CSS
+        </div>
+        <div className="absolute top-0 text-3xl lg:text-5xl font-semibold text-milk/5 left-10">
+          Javascript
+        </div>
+        <div className="absolute top-1/2 text-7xl font-semibold text-milk/5 left-32">
+          Typescript
+        </div>
+        <div className="absolute top-1/3 text-6xl font-semibold text-milk/5 right-20">
+          Node.js
+        </div>
+        <div className="absolute bottom-1/3 text-4xl md:text-6xl font-semibold text-milk/5 right-2">
+          React
+        </div>
+        <div className="absolute bottom-20 text-4xl md:text-6xl font-semibold text-milk/5 right-44">
+          Next.js
+        </div>
+        <div className="absolute bottom-44 text-7xl font-semibold text-milk/5 left-1/2">
+          Tailwind CSS
+        </div>
 
-      <div className="w-[88%] md:w-4/5 lg:w-3/5 h-full flex items-center relative">
-        <TimeLine />
-        <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
-          <div className="text-base font-light text-white/60 tracking-wide">{`Projects />`}</div>
+        <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center relative">
+          <TimeLine />
+          <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
+            <div className="text-base font-light text-white/60 tracking-wide">{`Projects />`}</div>
 
-          <ProjectsList />
+            <ProjectsList />
+          </div>
         </div>
       </div>
     </section>

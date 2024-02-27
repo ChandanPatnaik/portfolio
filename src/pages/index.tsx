@@ -6,6 +6,7 @@ import {
   Expertise,
   Hero,
   Projects,
+  Skills,
 } from "@/components/home";
 import { PublicLayout } from "@/components/layouts";
 import Head from "next/head";
@@ -37,13 +38,14 @@ export default function Home() {
         <Loader />
       ) : (
         <PublicLayout title={title} description={description}>
-          <div className="w-full relative h-full">
+          <div className="w-full relative h-full ">
             <div className="fixed z-[200] right-1 md:right-8 bottom-2">
               <SocialIconList />
             </div>
             <section className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-[80vh] md:h-screen">
               <Hero />
             </section>
+            <Skills />
             <Expertise />
             <Experience />
             <Projects />

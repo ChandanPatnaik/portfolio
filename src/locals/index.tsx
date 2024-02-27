@@ -22,26 +22,37 @@ export const navigationData = [
     label: "Start",
     link: "/",
     icon: <MdRestartAlt />,
+    isOuterLink: false,
   },
   {
     label: "About",
     link: "#about",
     icon: <BiCommentDetail />,
+    isOuterLink: false,
   },
   {
     label: "Projects",
     link: "#projects",
     icon: <FaNetworkWired />,
+    isOuterLink: false,
+  },
+  {
+    label: "Blogs",
+    link: "https://blog-chandan-patnaik.vercel.app/",
+    icon: <FaNetworkWired />,
+    isOuterLink: true,
   },
   {
     label: "Contact",
     link: "#contact",
     icon: <IoIosContact />,
+    isOuterLink: false,
   },
   {
     label: "Resume",
     link: "/Chandan Ku. Patnaik.pdf",
     icon: <IoDocumentAttachOutline />,
+    isOuterLink: true,
   },
 ];
 
@@ -208,33 +219,27 @@ export const projectLists = [
 // expertise data
 export const expertiseData = [
   {
-    heading: (
-      <div>
-        Software <br /> Development
-      </div>
-    ),
+    heading: <div>Software Development</div>,
     description:
       "Experienced in both function and OOP: Javascript, Typescript, Python",
     icon: <CiDesktop />,
+    image: "/images/software.avif",
+    class: "bg-dark-slate/20",
   },
   {
-    heading: (
-      <div>
-        Frontend Dev <br /> React, NextJS
-      </div>
-    ),
+    heading: <div>Frontend Dev React, NextJS</div>,
     description:
       "Over 2 years of development experience in React, NextJS and Other frontend libraries.",
     icon: <FaReact />,
+    image: "/images/backend.png",
+    class: "bg-light-sky/40",
   },
   {
-    heading: (
-      <div>
-        Backend Dev <br /> Node, Express
-      </div>
-    ),
+    heading: <div>Backend Dev Node, Express</div>,
     description:
       "Experienced in crafting efficient cross-platform backends using Node.js and Express.",
     icon: <SiExpress />,
+    image: "/images/frontend.png",
+    class: "bg-light-yellow/20",
   },
 ];
