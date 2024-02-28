@@ -43,10 +43,10 @@ const LeftSkillSection = () => {
       {/* -------------- box-1-------------- */}
       <motion.div
         viewport={{ once: true }}
-        initial={{ y: 120 }}
+        initial={{ y: 200 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        exit={{ y: 120 }}
+        exit={{ y: 200 }}
         className="text-8xl flex-col flex items-center justify-center col-span-5 md:col-span-3 h-60 rounded-lg bg-gradient-to-b from-rose-700 to-red-200/10"
       >
         <TbBrandFramerMotion />
@@ -55,10 +55,10 @@ const LeftSkillSection = () => {
 
       <motion.div
         viewport={{ once: true }}
-        initial={{ y: 120 }}
+        initial={{ y: 200 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        exit={{ y: 120 }}
+        exit={{ y: 200 }}
         className="h-60 right-0 text-white/70 flex-col flex md:hidden overflow-hidden text-xl col-span-5 bg-light-sky/10 rounded-lg"
       >
         <img
@@ -76,10 +76,10 @@ const LeftSkillSection = () => {
       {/* -------------- box-2 -------------- */}
       <motion.div
         viewport={{ once: true }}
-        initial={{ y: 120 }}
+        initial={{ y: 200 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
-        exit={{ y: 120 }}
+        exit={{ y: 200 }}
         className="col-span-full md:col-span-7 h-72 md:h-60 flex flex-col gap-2 relative"
       >
         <div className=" text-white/70 w-full p-3 h-44 md:h-36 bg-light-sky/10 rounded-lg">
@@ -143,10 +143,10 @@ const LeftSkillSection = () => {
 
       <motion.div
         viewport={{ once: true }}
-        initial={{ y: 120 }}
+        initial={{ y: 180 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
-        exit={{ y: 120 }}
+        exit={{ y: 180 }}
         className="col-span-full md:col-span-7 w-full"
       >
         <div className="md:mr-7 rounded-lg overflow-hidden h-44 md:h-36">
@@ -166,7 +166,7 @@ const RightSkillSection = () => {
     <div className="col-span-full lg:col-span-5 flex flex-col gap-2">
       <motion.div
         viewport={{ once: true }}
-        initial={{ y: 120 }}
+        initial={{ y: 200 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.3 }}
         exit={{ y: 80 }}

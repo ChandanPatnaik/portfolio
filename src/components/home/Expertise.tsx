@@ -154,17 +154,13 @@ const ExpertiseCard = ({
   return (
     <motion.div
       viewport={{ once: true }}
-      initial={{ x: 120, opacity: 0 }}
-      whileInView={{ x: 0, opacity: 1 }}
+      initial={{ x: 120 }}
+      whileInView={{ x: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
-      exit={{ x: 120, opacity: 0 }}
+      exit={{ x: 120 }}
       className={`flex w-4/5 border overflow-hidden border-light-yellow/10 backdrop-blur-sm rounded-lg md:h-28 common-transition ${
         curExpertise.outerClass
-      } ${
-        index % 2
-          ? "!translate-x-32 hover:!translate-x-36"
-          : "translate-x-0 hover:!translate-x-2"
-      }`}
+      } ${index % 2 ? "!translate-x-32" : "translate-x-0"}`}
     >
       <div className="w-32 h-full text-6xl text-white flex items-center justify-center">
         {curExpertise.icon}
