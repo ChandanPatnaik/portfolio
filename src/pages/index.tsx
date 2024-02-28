@@ -5,6 +5,7 @@ import {
   Experience,
   Expertise,
   Hero,
+  IconRain,
   Projects,
   Skills,
 } from "@/components/home";
@@ -71,6 +72,7 @@ export default function Home() {
               <Projects />
               <About />
               <Contact />
+              <IconRain />
             </div>
           </PublicLayout>
         )}
