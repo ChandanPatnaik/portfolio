@@ -40,9 +40,9 @@ const Expertise = () => {
   const hiddenMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 30px, rgba(0,0,0,1) 30px, rgba(0,0,0,1) 30px)`;
   const visibleMask = `repeating-linear-gradient(to right, rgba(0,0,0,0) 0px, rgba(0,0,0,0) 0px, rgba(0,0,0,1) 0px, rgba(0,0,0,1) 30px)`;
   return (
-    <section id="about" className="w-full bg-[#15171C]">
-      <div className="w-full pb-0 main-container  lg:pb-32 main-co overflow-hidden scroll-m-10 relative  flex items-center justify-center">
-        <div className="absolute opacity-30 hidden lg:block lg:top-[70%] left-1/2 -translate-x-1/2">
+    <section className="w-full bg-[#15171C]">
+      <div className="w-full main-container pb-32 overflow-hidden scroll-m-10 relative  flex items-center justify-center">
+        <div className="absolute opacity-40 md:opacity-30 top-[81%] md:top-[70%] left-10 md:left-1/2 md:-translate-x-1/2">
           <motion.div
             initial={false}
             animate={
@@ -158,19 +158,23 @@ const ExpertiseCard = ({
       whileInView={{ x: 0 }}
       transition={{ duration: 0.5, delay: index * 0.2 }}
       exit={{ x: 120 }}
-      className={`flex w-4/5 border overflow-hidden border-light-yellow/10 backdrop-blur-sm rounded-lg md:h-28 common-transition ${
+      className={`flex w-full flex-col md:flex-row md:w-11/12 lg:w-4/5 border overflow-hidden border-light-yellow/10 backdrop-blur-sm rounded-lg md:h-28 common-transition ${
         curExpertise.outerClass
-      } ${index % 2 ? "!translate-x-32" : "translate-x-0"}`}
+      } ${index % 2 ? "md:!translate-x-32" : "translate-x-0"}`}
     >
-      <div className="w-32 h-full text-6xl text-white flex items-center justify-center">
+      <div className="p-3 md:p-0 w-full md:w-28 lg:w-32 h-full text-6xl text-white flex items-center md:justify-center">
         {curExpertise.icon}
       </div>
-      <div className="p-1 w-[calc(100%-8rem)]">
-        <div className={`h-full rounded-md p-3 ${curExpertise.class}`}>
+      <div className="p-1 w-full md:w-[calc(100%-7rem)] lg:w-[calc(100%-8rem)]">
+        <div
+          className={`h-full rounded-md p-3 md:p-2 lg:p-3 ${curExpertise.class}`}
+        >
           <p className="text-lg font-semibold text-white/90 whitespace-normal">
             {curExpertise?.heading}
           </p>
-          <p className="text-white/70">{curExpertise?.description}</p>
+          <p className="text-sm lg:text-base text-white/70">
+            {curExpertise?.description}
+          </p>
         </div>
       </div>
     </motion.div>

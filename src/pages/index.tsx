@@ -60,8 +60,8 @@ export default function Home() {
                 initial={{ y: "20vh", opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 exit={{ y: "20vh", opacity: 0 }}
-                transition={{ duration: 0.6 }}
-                className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-[80vh] md:h-screen"
+                transition={{ duration: 0.7 }}
+                className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-[90vh] md:h-screen"
               >
                 <Hero />
               </motion.section>

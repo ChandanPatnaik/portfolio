@@ -14,7 +14,7 @@ const Loader = () => {
   };
   return (
     <div className="w-screen h-screen bg-dark-blue">
-      <div className="flex items-center justify-center w-full h-full text-white gap-2 text-xl">
+      <div className="flex items-center justify-center w-full h-full text-white gap-2 text-lg md:text-xl">
         <motion.div
           initial="hidden"
           animate="visible"

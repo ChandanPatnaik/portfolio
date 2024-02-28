@@ -1,67 +1,122 @@
-import { useScrollPosition } from "@/hooks";
 import { navigationData } from "@/locals";
-import { Collapse } from "@mui/material";
-import { motion } from "framer-motion";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useState } from "react";
-import { BsMenuButtonFill } from "react-icons/bs";
+import { AnimatePresence, motion } from "framer-motion";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+
 const Header = () => {
   const { push } = useRouter();
-  const [toggle, setToggle] = useState(false);
-  const currentScroll = useScrollPosition();
+  const [showDrawer, setShowDrawer] = useState(false);
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const [headerVisible, setHeaderVisible] = useState(true);
+
   const handleLinkSession = (path: string) => {
     push(path);
-    setToggle(false);
+    setShowDrawer(false);
+    document.body.style.overflow = "auto";
   };
 
+  if (showDrawer) {
+    document.body.style.overflow = "hidden";
+  } else {
+    document.body.style.overflow = "auto";
+  }
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScrollTop =
+        window.scrollY || document.documentElement.scrollTop;
+      if (currentScrollTop > lastScrollTop) {
+        setHeaderVisible(false);
+      } else {
+        setHeaderVisible(true);
+      }
+      setLastScrollTop(currentScrollTop <= 0 ? 0 : currentScrollTop);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [lastScrollTop]);
+
   return (
-    <section
-      className={`fixed top-0 w-full z-[200] ${
-        toggle ? "bg-dark-blue   md:bg-transparent" : ""
-      } ${currentScroll > 0 ? "bg-dark-blue/80 backdrop-blur-sm" : ""}`}
-    >
-      <div className="w-full py-3 md:py-5 main-container text-white">
-        <div className="w-full justify-between flex items-center">
+    <>
+      <motion.header
+        initial={{ translateY: 0, opacity: 1 }}
+        animate={
+          headerVisible
+            ? { translateY: 0, opacity: 1 }
+            : { translateY: -100, opacity: 0 }
+        }
+        transition={{ duration: 0.4 }}
+        className={`fixed top-0 left-0 right-0 z-[301] bg-opacity-90 backdrop-blur-md text-white ${
+          showDrawer ? "bg-dark-slate backdrop-blur-md" : "bg-dark-blue/10"
+        }`}
+      >
+        <div className="flex justify-between items-center px-4 py-3 md:py-5 main-container">
           <div
             className="flex group items-center gap-2 text-lg w-fit hover:gap-5 common-transition hover:text-light-yellow"
             onClick={() => push("/")}
           >
             <motion.p
-              viewport={{ once: true }}
               initial={{ x: 20 }}
-              whileInView={{ x: 0 }}
-              transition={{ duration: 0.3, delay: 0.01 }}
-              exit={{ x: 0 }}
+              animate={!showDrawer ? { x: 0 } : { x: 10 }}
+              transition={{ duration: 0.3 }}
             >
               c
             </motion.p>
             <motion.p
-              viewport={{ once: true }}
               initial={{ x: 40 }}
-              whileInView={{ x: 0 }}
-              transition={{ duration: 0.4, delay: 0.01 }}
-              exit={{ x: 0 }}
+              animate={!showDrawer ? { x: 0 } : { x: 20 }}
+              transition={{ duration: 0.4 }}
             >
               p
             </motion.p>
             <motion.p
-              viewport={{ once: true }}
               initial={{ x: 60 }}
-              whileInView={{ x: 0 }}
-              transition={{ duration: 0.5, delay: 0.01 }}
-              exit={{ x: 0 }}
+              animate={!showDrawer ? { x: 0 } : { x: 30 }}
+              transition={{ duration: 0.5 }}
             >
               .
             </motion.p>
           </div>
 
-          <button
-            onClick={() => setToggle(!toggle)}
-            className="cursor-none md:hidden"
+          <motion.button
+            className="cursor-pointer md:hidden"
+            onClick={() => setShowDrawer(!showDrawer)}
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
           >
-            <BsMenuButtonFill />
-          </button>
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              {showDrawer ? (
+                <motion.path
+                  initial={{ pathLength: 0 }}
+                  animate={{ pathLength: 1 }}
+                  transition={{ duration: 0.4 }}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              ) : (
+                <motion.path
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ duration: 0.2 }}
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M4 6h16M4 12h16m-7 6h7"
+                />
+              )}
+            </svg>
+          </motion.button>
 
           <ul className="hidden md:flex items-center gap-12 text-sm">
             {navigationData.map((curLabel, i) =>
@@ -80,57 +135,63 @@ const Header = () => {
                   </li>
                 </a>
               ) : (
-                <Link href={curLabel.link} key={curLabel.label}>
-                  <li className="tracking-wider hover:text-light-yellow cursor-none common-transition">
-                    <span className="font-[Roboto]">
-                      0<span>{i + 1}.</span>
-                    </span>{" "}
-                    {curLabel.label}
-                  </li>
-                </Link>
+                <li
+                  onClick={() => handleLinkSession(curLabel.link)}
+                  key={curLabel.label}
+                  className="tracking-wider hover:text-light-yellow cursor-none common-transition"
+                >
+                  <span className="font-[Roboto]">
+                    0<span>{i + 1}.</span>
+                  </span>{" "}
+                  {curLabel.label}
+                </li>
               )
             )}
           </ul>
         </div>
+      </motion.header>
 
-        <Collapse in={toggle}>
-          <div className="w-full pt-5">
-            <ul className="grid grid-cols-5 gap-4 text-sm">
+      <AnimatePresence>
+        {showDrawer && (
+          <motion.div
+            initial={{ translateY: "40vh", opacity: 0 }}
+            animate={{ translateY: 0, opacity: 1 }}
+            exit={{ translateY: "40vh", opacity: 0 }}
+            transition={{ duration: 0.5 }}
+            className={`fixed bottom-0 h-screen left-0 right-0 z-[300] bg-dark-slate bg-opacity-90 backdrop-blur-md text-white`}
+          >
+            <ul className="flex flex-col gap-6 w-full pl-10 h-full justify-center">
               {navigationData.map((curLabel, i) =>
                 curLabel.isOuterLink ? (
                   <a
-                    onClick={() => setToggle(!toggle)}
+                    onClick={() => setShowDrawer(!showDrawer)}
                     href={curLabel.link}
                     key={curLabel.label}
                     download={true}
+                    className="w-fit"
                   >
-                    <div className="w-full h-fit p-1 border border-light-yellow/10 rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] flex items-center justify-center flex-col">
-                      <div className="text-xl text-milk/30">
-                        {curLabel.icon}
-                      </div>
-                      <li className="text-[9px] text-milk/60 common-transition leading-4">
-                        {curLabel.label}
-                      </li>
-                    </div>
+                    <li className="text-4xl w-fit text-milk/60 common-transition">
+                      {curLabel.label}
+                    </li>
                   </a>
                 ) : (
                   <div
                     onClick={() => handleLinkSession(curLabel.link)}
                     key={curLabel.label}
-                    className="w-full h-fit p-1 border border-light-yellow/10 rounded-md shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)] flex items-center justify-center flex-col"
+                    className="w-fit flex justify-center flex-col"
                   >
-                    <div className="text-xl text-milk/30">{curLabel.icon}</div>
-                    <li className="text-[9px] text-milk/60 common-transition leading-4">
+                    <li className="text-4xl text-milk/60 common-transition">
                       {curLabel.label}
                     </li>
                   </div>
                 )
               )}
             </ul>
-          </div>
-        </Collapse>
-      </div>
-    </section>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </>
   );
 };
+
 export default Header;

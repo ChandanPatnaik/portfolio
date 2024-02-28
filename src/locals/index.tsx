@@ -36,12 +36,12 @@ export const navigationData = [
     icon: <FaNetworkWired />,
     isOuterLink: false,
   },
-  {
-    label: "Blogs",
-    link: "https://blog-chandan-patnaik.vercel.app/",
-    icon: <FaNetworkWired />,
-    isOuterLink: true,
-  },
+  // {
+  //   label: "Blogs",
+  //   link: "https://blog-chandan-patnaik.vercel.app/",
+  //   icon: <FaNetworkWired />,
+  //   isOuterLink: true,
+  // },
   {
     label: "Contact",
     link: "#contact",
@@ -72,7 +72,7 @@ export const heroSectionIconsArray = [
   },
   {
     icon: <SiTailwindcss />,
-    title: "Tailwind CSS",
+    title: "Tailwind",
   },
   {
     icon: <FaNodeJs />,
@@ -137,7 +137,7 @@ export const heroSliderSettings = {
     {
       breakpoint: 480,
       settings: {
-        slidesToShow: 3,
+        slidesToShow: 3.5,
       },
     },
   ],
