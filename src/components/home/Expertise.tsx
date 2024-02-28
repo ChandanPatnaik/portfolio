@@ -74,7 +74,18 @@ const Expertise = () => {
             {/* <ExpertiseDetails /> */}
             <div className="w-full flex flex-col gap-5">
               {expertiseData.map((curExpertise, i) => (
-                <ExpertiseCard key={i} curExpertise={curExpertise} index={i} />
+                <div
+                  key={i}
+                  className={`w-full flex ${
+                    i === 1 ? "justify-end " : "justify-start"
+                  }`}
+                >
+                  <ExpertiseCard
+                    key={i}
+                    curExpertise={curExpertise}
+                    index={i}
+                  />
+                </div>
               ))}
             </div>
           </div>
@@ -96,54 +107,6 @@ const TimeLine = () => {
   );
 };
 
-const ExpertiseDetails = () => {
-  return (
-    <section
-      className={`w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 rounded-md h-full md:border-2 border-milk/30 `}
-    >
-      {expertiseData.map((curStack, index) => (
-        <div key={index}>
-          <div
-            className={`flex flex-col text-white h-full md:px-4 py-4 md:py-7 gap-3  border-milk/30 ${
-              index !== 2
-                ? "md:border-r-2 md:border-b-2 lg:border-b-0 border-b-0"
-                : "md:border-r-2 lg:border-r-0 border-r-0"
-            }`}
-          >
-            <div className="flex items-center gap-3 text-light-sky text-[Inter]">
-              <div className="text-5xl">{curStack.icon}</div>
-              <div className="text-lg leading-6 font-semibold">
-                {curStack.heading}
-              </div>
-            </div>
-            <div className="flex flex-col">
-              <p className="text-milk/50">{`anonymous(){`}</p>
-              <p className="pl-4 text-sm md:text-[15px] py-1 text-milk/80">
-                {curStack.description?.split("")?.map((data, i) => (
-                  <motion.span
-                    viewport={{ once: true }}
-                    initial={{ scale: 0, opacity: 0 }}
-                    whileInView={{ scale: 1, opacity: 1 }}
-                    transition={{ duration: 1, delay: i * index * 0.02 }}
-                    exit={{ scale: 0, opacity: 0 }}
-                    key={i}
-                  >
-                    {data}
-                  </motion.span>
-                ))}
-              </p>
-              <p className="text-milk/50">{`}`}</p>
-            </div>
-          </div>
-        </div>
-      ))}
-      <div className="text-lg hidden md:block lg:hidden font-semibold leading-6 md:px-4 py-4 md:py-7 text-milk/70">
-        {`The first message sent over the internet was "LOG". "LOGIN" was the original intended message but the entire system crashed. This was done at MIT.`}
-      </div>
-    </section>
-  );
-};
-
 const ExpertiseCard = ({
   curExpertise,
   index,
@@ -154,13 +117,11 @@ const ExpertiseCard = ({
   return (
     <motion.div
       viewport={{ once: true }}
-      initial={{ x: 120 }}
+      initial={{ x: index === 1 ? 220 : 120 }}
       whileInView={{ x: 0 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
-      exit={{ x: 120 }}
-      className={`flex w-full flex-col md:flex-row md:w-11/12 lg:w-4/5 border overflow-hidden border-light-yellow/10 backdrop-blur-sm rounded-lg md:h-28 common-transition ${
-        curExpertise.outerClass
-      } ${index % 2 ? "md:!translate-x-32" : "translate-x-0"}`}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      exit={{ x: index === 1 ? 220 : 120 }}
+      className={`flex w-full flex-col md:flex-row md:w-11/12 lg:w-4/5 border overflow-hidden border-light-yellow/10 backdrop-blur-sm rounded-lg md:h-28 common-transition ${curExpertise.outerClass}`}
     >
       <div className="p-3 md:p-0 w-full md:w-28 lg:w-32 h-full text-6xl text-white flex items-center md:justify-center">
         {curExpertise.icon}

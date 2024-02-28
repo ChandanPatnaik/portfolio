@@ -1,5 +1,5 @@
 import { CustomCursor } from "@/components/core";
-import useCustomScrolling from "@/hooks/useCustomScrolling";
+import { useCustomScrolling } from "@/hooks";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
 import "slick-carousel/slick/slick-theme.css";
