@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-const SCROLL_SPEED = 35;
+const SCROLL_SPEED = 25;
 const useCustomScrolling = () => {
   useEffect(() => {
     const handleScroll = (event: any) => {
