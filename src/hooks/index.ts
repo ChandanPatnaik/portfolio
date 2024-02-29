@@ -1,4 +1,3 @@
-export { default as useCustomScrolling } from "./useCustomScrolling";
 export { default as useIsMounted } from "./useIsMounted";
 export { default as useScrollPosition } from "./useScrollPosition";
 export { default as useSpotLight } from "./useSpotLight";
