@@ -2,7 +2,7 @@
 import { motion } from "framer-motion";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { DiMongodb } from "react-icons/di";
-import { FaNodeJs, FaReact } from "react-icons/fa6";
+import { FaGithub, FaNodeJs, FaReact } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiTailwindcss, SiTypescript } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
@@ -18,6 +18,7 @@ const Skills = () => {
             <div className="w-full grid grid-cols-12 text-white/50 gap-2">
               <LeftSkillSection />
               <RightSkillSection />
+              <BottomSection />
             </div>
           </div>
         </div>
@@ -228,5 +229,82 @@ const RightSkillSection = () => {
         Full Stack Development
       </motion.div>
     </div>
+  );
+};
+
+const BottomSection = () => {
+  return (
+    <motion.div className="w-full h-full grid grid-cols-12 col-span-full gap-2">
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ y: 80 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        exit={{ y: 80 }}
+        className="col-span-6 md:col-span-3 lg:col-span-2 opacity-80 text-white text-8xl bg-gradient-to-b from-dark-slate to-dark-blue border border-light-sky/10 flex items-center justify-center rounded-lg overflow-hidden"
+      >
+        <FaGithub />
+      </motion.div>
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ y: 80 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0.4 }}
+        exit={{ y: 80 }}
+        className="col-span-6 md:col-span-4 lg:col-span-2 overflow-hidden rounded-lg"
+      >
+        <img
+          src="/images/vscode.webp"
+          alt=""
+          className="w-full h-36 object-cover"
+        />
+      </motion.div>
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ y: 80 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0.2 }}
+        exit={{ y: 80 }}
+        className="bg-light-sky/10 bg-opacity-90 p-3 col-span-full md:col-span-5 lg:col-span-4 h-40 md:h-full flex items-center justify-center rounded-lg overflow-hidden"
+      >
+        <motion.img
+          src="/images/docker-blue.png"
+          alt=""
+          className="w-28"
+          animate={{
+            x: [10, 7, 5, 1, 4, 3, 2, 1, 3, 5, 7, 9],
+          }}
+          transition={{ duration: 3, repeat: Infinity }}
+        />
+      </motion.div>
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ y: 80 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0.5 }}
+        exit={{ y: 80 }}
+        className="col-span-6 md:col-span-3 lg:col-span-2 overflow-hidden rounded-lg w-full"
+      >
+        <img
+          src="/images/firebase.png"
+          alt=""
+          className="w-full h-36  object-cover md:object-contain"
+        />
+      </motion.div>
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ y: 80 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        exit={{ y: 80 }}
+        className="col-span-6 md:col-span-3 lg:col-span-2 overflow-hidden rounded-lg w-full bg-white opacity-70"
+      >
+        <img
+          src="/images/aws.png"
+          alt=""
+          className="w-full h-36 object-contain"
+        />
+      </motion.div>
+    </motion.div>
   );
 };

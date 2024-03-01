@@ -3,7 +3,6 @@ import { useState } from "react";
 import { BiLogoGmail } from "react-icons/bi";
 import { FaLinkedinIn } from "react-icons/fa6";
 import { FiGithub } from "react-icons/fi";
-import { IoIosArrowDown } from "react-icons/io";
 
 export const iconList = [
   {
@@ -55,7 +54,7 @@ const SocialIconList = () => {
         className="hidden md:block h-28 w-0.5 bg-milk/60"
       ></motion.div>
 
-      <div className="flex flex-col gap-2">
+      {/* <div className="flex flex-col gap-2">
         {isVisible && (
           <div className="flex md:hidden flex-col gap-2">
             {iconList.map((curIcon, i) => (
@@ -86,7 +85,7 @@ const SocialIconList = () => {
             className={`common-transition ${isVisible ? "rotate-180" : ""}`}
           />
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };
