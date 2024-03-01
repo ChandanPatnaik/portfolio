@@ -1,4 +1,4 @@
-import { navigationData } from "@/locals";
+import { navigationData, socialIconList } from "@/locals";
 import { AnimatePresence, motion } from "framer-motion";
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
@@ -160,33 +160,59 @@ const Header = () => {
             transition={{ duration: 0.5 }}
             className={`fixed bottom-0 h-screen left-0 right-0 z-[300] bg-dark-slate bg-opacity-90 backdrop-blur-md text-white`}
           >
-            <ul className="flex flex-col gap-6 w-full pl-10 h-full justify-center">
-              {navigationData.map((curLabel, i) =>
-                curLabel.isOuterLink ? (
-                  <a
-                    onClick={() => setShowDrawer(!showDrawer)}
-                    href={curLabel.link}
+            <div className="w-full h-full items-center justify-center">
+              <ul className="flex flex-col gap-6 w-full pl-10 h-full justify-center">
+                {navigationData.map((curLabel, i) => (
+                  <motion.li
                     key={curLabel.label}
-                    download={true}
-                    className="w-fit"
-                  >
-                    <li className="text-4xl w-fit text-milk/60 common-transition">
-                      {curLabel.label}
-                    </li>
-                  </a>
-                ) : (
-                  <div
-                    onClick={() => handleLinkSession(curLabel.link)}
-                    key={curLabel.label}
+                    initial={{ opacity: 0, y: 100 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.4, delay: i * 0.2 }}
+                    exit={{ opacity: 0, y: 100 }}
                     className="w-fit flex justify-center flex-col"
                   >
-                    <li className="text-4xl text-milk/60 common-transition">
-                      {curLabel.label}
-                    </li>
-                  </div>
-                )
-              )}
-            </ul>
+                    {curLabel.isOuterLink ? (
+                      <a
+                        onClick={() => setShowDrawer(!showDrawer)}
+                        href={curLabel.link}
+                        download={true}
+                        className="w-fit text-4xl text-milk/60 common-transition"
+                      >
+                        {curLabel.label}
+                      </a>
+                    ) : (
+                      <span
+                        onClick={() => handleLinkSession(curLabel.link)}
+                        className="w-fit text-4xl text-milk/60 common-transition cursor-pointer"
+                      >
+                        {curLabel.label}
+                      </span>
+                    )}
+                  </motion.li>
+                ))}
+              </ul>
+
+              <div className="absolute bottom-10 left-8 w-full flex gap-4">
+                {socialIconList.map((curIcon, index) => (
+                  <motion.a
+                    viewport={{ once: true }}
+                    initial={{ y: 40, opacity: 0 }}
+                    whileInView={{ y: 0, opacity: 1 }}
+                    transition={{ duration: 0.4, delay: index * 0.3 }}
+                    exit={{ y: 40, opacity: 0 }}
+                    href={curIcon.link}
+                    target="_blank"
+                    key={index}
+                  >
+                    <div
+                      className={`text-2xl w-12 h-12 flex items-center justify-center common-transition text-milk/60`}
+                    >
+                      {curIcon.icon}
+                    </div>
+                  </motion.a>
+                ))}
+              </div>
+            </div>
           </motion.div>
         )}
       </AnimatePresence>

@@ -1,11 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 
 import { database } from "@/configs/firebase.config";
+import { socialIconList } from "@/locals";
 import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import * as Yup from "yup";
-import { iconList } from "../common/SocialIconList";
 import { CustomDialog, CustomInput } from "../core";
 
 type ValueProps =
@@ -214,7 +214,7 @@ const ContactUsForm = () => {
             Follow Me
           </div>
           <div className="flex items-center gap-4 justify-center">
-            {iconList.map((curIcon) => (
+            {socialIconList.map((curIcon) => (
               <a href={curIcon.link} key={curIcon.link} target="_blank">
                 <div
                   className={`${curIcon.color} w-10 h-10 text-white flex items-center justify-center rounded-lg text-lg`}

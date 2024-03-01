@@ -1,15 +1,17 @@
-import { BiCommentDetail } from "react-icons/bi";
+import { BiCommentDetail, BiLogoGmail } from "react-icons/bi";
 import { CiDesktop } from "react-icons/ci";
 import { DiMongodb } from "react-icons/di";
 import {
   FaCss3,
   FaHtml5,
+  FaLinkedinIn,
   FaNetworkWired,
   FaNodeJs,
   FaNpm,
   FaReact,
   FaYarn,
 } from "react-icons/fa6";
+import { FiGithub } from "react-icons/fi";
 import { IoIosContact, IoLogoJavascript } from "react-icons/io";
 import { IoDocumentAttachOutline } from "react-icons/io5";
 import { MdRestartAlt } from "react-icons/md";
@@ -285,5 +287,23 @@ export const expertiseData = [
     icon: <SiExpress />,
     image: "/images/frontend.png",
     class: "bg-light-yellow/20",
+  },
+];
+
+export const socialIconList = [
+  {
+    icon: <FiGithub />,
+    link: "https://github.com/ChandanPatnaik",
+    color: "bg-blue-600 text-white",
+  },
+  {
+    icon: <FaLinkedinIn />,
+    link: "https://www.linkedin.com/in/chandan-patnaik/",
+    color: "bg-blue-400 text-white",
+  },
+  {
+    icon: <BiLogoGmail />,
+    link: "mailto:chandanpatnaik81@gmail.com",
+    color: "bg-orange-600 text-white",
   },
 ];
