@@ -88,7 +88,9 @@ const IconRain = () => {
                     src="/images/car.png"
                     alt=""
                     className="w-32 md:w-40"
-                    animate={{ x: [0, 10, 0, 2, 1, 4, 3] }}
+                    animate={{
+                      x: [10, 7, 5, 1, 4, 3, 2, 1, 3, 5, 7, 9],
+                    }}
                     transition={{ duration: 3, repeat: Infinity }}
                   />
                 </div>

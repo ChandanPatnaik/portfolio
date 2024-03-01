@@ -214,6 +214,50 @@ export const projectLists = [
   //     "TailwindCSS",
   //   ],
   // },
+  // {
+  //   name: "Portfolio",
+  //   description:
+  //     "Explore my portfolio crafted with Next.js, Tailwind CSS, and Framer Motion. Discover sleek designs, responsive layouts, and captivating animations.",
+  //   image: "/projects/portfolio.png",
+  //   tech: ["Next.js", "TailwindCSS", "Framer Motion", "Vercel", "Firebase"],
+  //   link: "https://chandan-patnaik.vercel.app/",
+  // },
+  // {
+  //   name: "Airbnb Clone",
+  //   description:
+  //     "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
+  //   image: "/projects/airbnb.png",
+  //   tech: [
+  //     "Next.js",
+  //     "Express",
+  //     "Node.js",
+  //     "MongoDB",
+  //     "Mongoose",
+  //     "TailwindCSS",
+  //   ],
+  // },
+  // {
+  //   name: "Portfolio",
+  //   description:
+  //     "Explore my portfolio crafted with Next.js, Tailwind CSS, and Framer Motion. Discover sleek designs, responsive layouts, and captivating animations.",
+  //   image: "/projects/portfolio.png",
+  //   tech: ["Next.js", "TailwindCSS", "Framer Motion", "Vercel", "Firebase"],
+  //   link: "https://chandan-patnaik.vercel.app/",
+  // },
+  // {
+  //   name: "Airbnb Clone",
+  //   description:
+  //     "Video course that teaches how to build a web app with the Spotify Web API. Topics covered include the principles of REST APIs, user auth flows, Node, Express, React, Styled Components, and more.",
+  //   image: "/projects/airbnb.png",
+  //   tech: [
+  //     "Next.js",
+  //     "Express",
+  //     "Node.js",
+  //     "MongoDB",
+  //     "Mongoose",
+  //     "TailwindCSS",
+  //   ],
+  // },
 ];
 
 // expertise data
