@@ -265,8 +265,14 @@ const BottomSection = () => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         exit={{ y: 80 }}
-        className="bg-light-sky/10 bg-opacity-90 p-3 col-span-full md:col-span-5 lg:col-span-4 h-40 md:h-full flex items-center justify-center rounded-lg overflow-hidden"
+        className="bg-light-sky/10 relative bg-opacity-90 p-3 col-span-full md:col-span-5 lg:col-span-4 h-40 md:h-full flex items-center justify-center rounded-lg overflow-hidden"
       >
+        <div className="absolute top-2 text-3xl md:text-4xl font-semibold text-milk/5 left-1">
+          Docker
+        </div>
+        <div className="absolute bottom-1 text-4xl font-semibold text-milk/5 right-4">
+          Images
+        </div>
         <motion.img
           src="/images/docker-blue.png"
           alt=""
