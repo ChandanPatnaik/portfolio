@@ -7,36 +7,16 @@ import { IoLogoJavascript } from "react-icons/io";
 import { SiTailwindcss, SiTypescript } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
 
-const Skills = () => {
+const SkillBox = () => {
   return (
-    <section id="about" className="bg-dark-slate/50">
-      <div className="w-full scroll-mt-16 md:scroll-m-10 relative flex items-center justify-center overflow-hidden main-container">
-        <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center relative">
-          <TimeLine />
-          <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
-            <div className="text-base font-light text-white/60 tracking-wide">{`Skills />`}</div>
-            <div className="w-full grid grid-cols-12 text-white/50 gap-2">
-              <LeftSkillSection />
-              <RightSkillSection />
-              <BottomSection />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-export default Skills;
-
-const TimeLine = () => {
-  return (
-    <div className="absolute flex flex-col items-center top-0 left-0 h-[400%] w-4">
-      <div className="w-0.5 h-10 md:h-14 bg-light-yellow"></div>
-      <div className="w-2 h-2 border border-light-yellow rounded-full bg-transparent"></div>
-      <div className="w-0.5 h-[calc(100%-4rem)] bg-light-yellow"></div>
+    <div className="w-full grid grid-cols-12 text-white/50 gap-2">
+      <LeftSkillSection />
+      <RightSkillSection />
+      <BottomSection />
     </div>
   );
 };
+export default SkillBox;
 
 const LeftSkillSection = () => {
   return (

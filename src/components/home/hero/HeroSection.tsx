@@ -5,11 +5,20 @@ import HeroTimeLine from "./HeroTimeLine";
 
 const HeroSection = () => {
   return (
-    <section className="w-full  main-container flex items-center justify-center h-full overflow-hidden">
-      <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center">
-        <TextArea />
-      </div>
-    </section>
+    <motion.section
+      key="content"
+      initial={{ y: "20vh", opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      exit={{ y: "20vh", opacity: 0 }}
+      transition={{ duration: 0.7 }}
+      className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-[90vh] md:h-screen"
+    >
+      <section className="w-full main-container flex items-center justify-center h-full overflow-hidden">
+        <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center">
+          <TextArea />
+        </div>
+      </section>
+    </motion.section>
   );
 };
 
