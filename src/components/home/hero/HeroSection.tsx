@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <motion.section
       key="content"
-      initial={{ y: "20vh", opacity: 0 }}
+      initial={{ y: "30vh", opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       exit={{ y: "20vh", opacity: 0 }}
       transition={{ duration: 0.7 }}

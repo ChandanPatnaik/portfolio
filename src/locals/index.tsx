@@ -144,6 +144,37 @@ export const heroSliderSettings = {
   ],
 };
 
+// skill section slider configuration
+export const skillSliderSettings = {
+  dots: false,
+  infinite: true,
+  slidesToShow: 3,
+  slidesToScroll: 1,
+  autoplay: true,
+  speed: 30000,
+  cssEase: "linear",
+  autoplaySpeed: 0,
+  pauseOnHover: false,
+  arrows: false,
+  ltr: true,
+};
+
+// skill section icon data
+export const skillSectionIconsArray = [
+  {
+    title: "Javascript",
+  },
+  {
+    title: "Typescript",
+  },
+  {
+    title: "Python",
+  },
+  {
+    title: "Node.js",
+  },
+];
+
 // experience data
 export const experienceData = [
   {

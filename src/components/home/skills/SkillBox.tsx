@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { AWS, Bracket, Firebase, Node, VsCode } from "@/assets/logos";
+import { AWS, Bracket, Firebase, NextJs, Node, VsCode } from "@/assets/logos";
+import { skillSectionIconsArray, skillSliderSettings } from "@/locals";
 import { motion } from "framer-motion";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { DiMongodb } from "react-icons/di";
@@ -7,6 +8,7 @@ import { FaGithub, FaNodeJs, FaReact } from "react-icons/fa6";
 import { IoLogoJavascript } from "react-icons/io";
 import { SiTailwindcss, SiTypescript } from "react-icons/si";
 import { TbBrandFramerMotion } from "react-icons/tb";
+import Slider from "react-slick";
 
 const SkillBox = () => {
   return (
@@ -79,7 +81,7 @@ const LeftSkillSection = () => {
               <BiLogoPostgresql />
             </div>
           </div>
-          <p className="text-lg font-bold">Programming Language</p>
+          <p className="text-lg font-bold">Language & Libraries</p>
           <p className="text-sm md:text-xs pt-1">
             Skilled in frontend and backend development, utilizing React.js and
             Express.js for dynamic web apps.
@@ -127,12 +129,20 @@ const LeftSkillSection = () => {
         exit={{ y: 180 }}
         className="col-span-full md:col-span-7 w-full"
       >
-        <div className="md:mr-7 rounded-lg overflow-hidden h-44 md:h-36">
-          <img
-            src="/images/next.webp"
-            alt=""
-            className="w-full object-cover h-full"
-          />
+        <div className="md:mr-7 rounded-lg flex gap-2 overflow-hidden h-44 md:h-36">
+          <div className="w-20 h-full bg-slate-700 relative rounded-lg">
+            <div className="rotate-90 leading-5 absolute w-full font-bold right h-full flex-col flex items-center justify-center">
+              <span className="whitespace-nowrap">SQL & NoSQL</span>{" "}
+              <span>Databases</span>
+            </div>
+          </div>
+          <div className="rounded-lg overflow-hidden w-[calc(100%-5rem)]">
+            <img
+              src={NextJs.src}
+              alt=""
+              className="w-full object-cover h-full"
+            />
+          </div>
         </div>
       </motion.div>
     </div>
@@ -178,6 +188,7 @@ const RightSkillSection = () => {
           </p>
         </div>
       </motion.div>
+
       <motion.div
         viewport={{ once: true }}
         initial={{ y: 80 }}
@@ -195,15 +206,32 @@ const RightSkillSection = () => {
           <p className="text-sm">React.js</p>
         </div>
       </motion.div>
+
       <motion.div
         viewport={{ once: true }}
         initial={{ x: 10 }}
         whileInView={{ x: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
         exit={{ x: 10 }}
-        className="w-full rounded-lg p-2 bg-light-yellow/10 text-center"
+        className="w-full h-10 rounded-lg overflow-hidden"
       >
-        Full Stack Development
+        {/* Full Stack Development */}
+        <Slider {...skillSliderSettings}>
+          {skillSectionIconsArray.map((curIcon, i) => (
+            <div
+              key={curIcon.title}
+              className={`!flex font-semibold !flex-col !items-center h-full px-1 !justify-center`}
+            >
+              <div
+                className={`text-center w-full rounded-lg p-2 text-milk/60 ${
+                  i % 2 ? "bg-milk/20" : "bg-milk/30"
+                }`}
+              >
+                {curIcon.title}
+              </div>
+            </div>
+          ))}
+        </Slider>
       </motion.div>
     </div>
   );
@@ -211,7 +239,7 @@ const RightSkillSection = () => {
 
 const BottomSection = () => {
   return (
-    <motion.div className="w-full h-full grid grid-cols-12 col-span-full gap-2">
+    <div className="w-full h-full grid grid-cols-12 col-span-full gap-2">
       <motion.div
         viewport={{ once: true }}
         initial={{ y: 80 }}
@@ -222,6 +250,7 @@ const BottomSection = () => {
       >
         <FaGithub />
       </motion.div>
+
       <motion.div
         viewport={{ once: true }}
         initial={{ y: 80 }}
@@ -232,6 +261,7 @@ const BottomSection = () => {
       >
         <img src={VsCode.src} alt="" className="w-full h-36 object-cover" />
       </motion.div>
+
       <motion.div
         viewport={{ once: true }}
         initial={{ y: 80 }}
@@ -256,20 +286,22 @@ const BottomSection = () => {
           transition={{ duration: 3, repeat: Infinity }}
         />
       </motion.div>
+
       <motion.div
         viewport={{ once: true }}
         initial={{ y: 80 }}
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         exit={{ y: 80 }}
-        className="col-span-6 p-3 h-36 bg-[#1A73E8]/80 md:col-span-3 lg:col-span-2 overflow-hidden rounded-lg w-full"
+        className="col-span-6 p-3 h-36 bg-[#1A73E8]/60 md:col-span-3 lg:col-span-2 overflow-hidden rounded-lg w-full"
       >
         <img
           src={Firebase.src}
           alt=""
-          className="w-full h-full object-contain"
+          className="w-full h-full object-contain opacity-90"
         />
       </motion.div>
+
       <motion.div
         viewport={{ once: true }}
         initial={{ y: 80 }}
@@ -280,6 +312,6 @@ const BottomSection = () => {
       >
         <img src={AWS.src} alt="" className="w-full h-36 object-cover" />
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
