@@ -1,7 +1,7 @@
 import { Loader, SeoContent, SocialIconList } from "@/components/common";
 import {
-  About,
   ContactSection,
+  DevSection,
   ExperienceSection,
   ExpertiseSection,
   HeroSection,
@@ -37,7 +37,7 @@ export default function Home() {
               <ExpertiseSection />
               <ExperienceSection />
               <Projects />
-              <About />
+              <DevSection />
               <ContactSection />
               <TrackSection />
             </div>
