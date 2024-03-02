@@ -2,7 +2,7 @@ import { Loader, SocialIconList } from "@/components/common";
 import {
   About,
   Contact,
-  Experience,
+  ExperienceSection,
   ExpertiseSection,
   HeroSection,
   Projects,
@@ -50,7 +50,7 @@ export default function Home() {
               <HeroSection />
               <SkillSection />
               <ExpertiseSection />
-              <Experience />
+              <ExperienceSection />
               <Projects />
               <About />
               <Contact />

@@ -1,39 +1,7 @@
-/* eslint-disable @next/next/no-img-element */
 import { experienceData } from "@/locals";
 import { useState } from "react";
 import { AiOutlineMinus } from "react-icons/ai";
 import { FaArrowRightLong } from "react-icons/fa6";
-
-const Experience = () => {
-  return (
-    <section className="bg-dark-blue">
-      <div className="w-full scroll-m-10 relative flex items-center justify-center overflow-hidden main-container">
-        <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center relative">
-          <TimeLine />
-          <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
-            <div className="text-base font-light text-white/60 tracking-wide">{`Experience />`}</div>
-            <div className="w-full flex flex-col gap-10">
-              {experienceData.map((curExp, i) => (
-                <ExperienceCard curExp={curExp} key={i} />
-              ))}
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-export default Experience;
-
-const TimeLine = () => {
-  return (
-    <div className="absolute flex flex-col items-center top-0 left-0 h-[400%] w-4">
-      <div className="w-0.5 h-10 md:h-14 bg-light-yellow"></div>
-      <div className="w-2 h-2 border border-light-yellow rounded-full bg-transparent"></div>
-      <div className="w-0.5 h-[calc(100%-4rem)] bg-light-yellow"></div>
-    </div>
-  );
-};
 
 const ExperienceCard = ({ curExp }: { curExp: (typeof experienceData)[0] }) => {
   const [readMore, setReadMore] = useState(false);
@@ -95,3 +63,5 @@ const ExperienceCard = ({ curExp }: { curExp: (typeof experienceData)[0] }) => {
     </div>
   );
 };
+
+export default ExperienceCard;
