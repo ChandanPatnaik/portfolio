@@ -1,5 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
-import { AWS, Bracket, Firebase, NextJs, Node, VsCode } from "@/assets/logos";
+import {
+  AWS,
+  Bracket,
+  Docker,
+  Firebase,
+  NextJs,
+  Node,
+  VsCode,
+} from "@/assets/logos";
 import { skillSectionIconsArray, skillSliderSettings } from "@/locals";
 import { motion } from "framer-motion";
 import { BiLogoPostgresql } from "react-icons/bi";
@@ -81,7 +89,7 @@ const LeftSkillSection = () => {
               <BiLogoPostgresql />
             </div>
           </div>
-          <p className="text-lg font-bold">Language & Libraries</p>
+          <p className="text-lg font-bold">Languages & Libraries</p>
           <p className="text-sm md:text-xs pt-1">
             Skilled in frontend and backend development, utilizing React.js and
             Express.js for dynamic web apps.
@@ -213,10 +221,10 @@ const RightSkillSection = () => {
         whileInView={{ x: 0 }}
         transition={{ duration: 0.5, delay: 0.4 }}
         exit={{ x: 10 }}
-        className="w-full h-10 rounded-lg overflow-hidden"
+        className="w-full h-10 rounded-lg overflow-hidden relative"
       >
         {/* Full Stack Development */}
-        <Slider {...skillSliderSettings}>
+        <Slider {...skillSliderSettings} className="z-30">
           {skillSectionIconsArray.map((curIcon, i) => (
             <div
               key={curIcon.title}
@@ -240,6 +248,17 @@ const RightSkillSection = () => {
 const BottomSection = () => {
   return (
     <div className="w-full h-full grid grid-cols-12 col-span-full gap-2">
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ y: 80 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        exit={{ y: 80 }}
+        className="col-span-6 md:col-span-3 lg:col-span-3 flex items-center justify-center bg-stone-700 overflow-hidden rounded-lg w-full"
+      >
+        <img src={AWS.src} alt="" className="w-32 object-contain" />
+      </motion.div>
+
       <motion.div
         viewport={{ once: true }}
         initial={{ y: 80 }}
@@ -268,22 +287,22 @@ const BottomSection = () => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         exit={{ y: 80 }}
-        className="bg-light-sky/10 relative bg-opacity-90 p-3 col-span-full md:col-span-5 lg:col-span-3 h-40 md:h-full flex items-center justify-center rounded-lg overflow-hidden"
+        className="bg-slate-950 relative bg-opacity-90 col-span-full md:col-span-5 lg:col-span-3 h-40 md:h-full flex items-center justify-center rounded-lg overflow-hidden"
       >
-        <div className="absolute top-2 text-3xl md:text-4xl font-semibold text-milk/5 left-1">
+        <div className="absolute top-2 text-2xl md:text-3xl font-semibold text-milk/5 left-1">
           Docker
         </div>
-        <div className="absolute bottom-1 text-4xl font-semibold text-milk/5 right-4">
+        <div className="absolute bottom-1 text-3xl font-semibold text-milk/5 right-4">
           Images
         </div>
         <motion.img
-          src="/images/docker-blue.png"
+          src={Docker.src}
           alt=""
-          className="w-28"
+          className="w-32"
           animate={{
             x: [10, 7, 5, 1, 4, 3, 2, 1, 3, 5, 7, 9],
           }}
-          transition={{ duration: 3, repeat: Infinity }}
+          transition={{ duration: 10, repeat: Infinity }}
         />
       </motion.div>
 
@@ -300,17 +319,6 @@ const BottomSection = () => {
           alt=""
           className="w-full h-full object-contain opacity-90"
         />
-      </motion.div>
-
-      <motion.div
-        viewport={{ once: true }}
-        initial={{ y: 80 }}
-        whileInView={{ y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        exit={{ y: 80 }}
-        className="col-span-6 md:col-span-3 lg:col-span-3 overflow-hidden rounded-lg w-full bg-white opacity-70"
-      >
-        <img src={AWS.src} alt="" className="w-full h-36 object-cover" />
       </motion.div>
     </div>
   );

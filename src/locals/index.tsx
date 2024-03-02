@@ -156,7 +156,27 @@ export const skillSliderSettings = {
   autoplaySpeed: 0,
   pauseOnHover: false,
   arrows: false,
-  ltr: true,
+  rtl: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 2,
+      },
+    },
+  ],
 };
 
 // skill section icon data
