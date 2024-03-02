@@ -1,11 +1,9 @@
-import { heroSectionIconsArray, heroSliderSettings } from "@/locals";
 import { motion } from "framer-motion";
-import Link from "next/link";
-import { useRef } from "react";
-import Slider from "react-slick";
-import { HeroAnimatedText } from "../common";
+import HeroAnimatedText from "./HeroAnimatedText";
+import HeroSlider from "./HeroSlider";
+import HeroTimeLine from "./HeroTimeLine";
 
-const Hero = () => {
+const HeroSection = () => {
   return (
     <section className="w-full  main-container flex items-center justify-center h-full overflow-hidden">
       <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center">
@@ -15,12 +13,10 @@ const Hero = () => {
   );
 };
 
-export default Hero;
-
 const TextArea = () => {
   return (
     <div className="flex flex-col gap-6 md:gap-8 w-full h-fit relative text-3xl md:text-4xl lg:text-6xl font-semibold pl-6 md:pl-8">
-      <TimeLine />
+      <HeroTimeLine />
       <motion.div
         viewport={{ once: true }}
         initial={{ x: 40 }}
@@ -75,52 +71,4 @@ const TextArea = () => {
   );
 };
 
-const TimeLine = () => {
-  return (
-    <div className="absolute flex flex-col items-center top-2 left-0 h-[400%] w-4">
-      <div className="w-2 h-2 bg-transparent border rounded-full border-light-yellow"></div>
-      <motion.div
-        viewport={{ once: true }}
-        initial={{ scale: 1, y: 0, height: 0 }}
-        whileInView={{ scale: 1, y: 0, height: "18rem" }}
-        transition={{ duration: 1 }}
-        exit={{ scale: 0, y: -40 }}
-        className="w-0.5 h-72 bg-light-yellow"
-      ></motion.div>
-      <Link href={"/#about"}>
-        <div className="h-7 w-4 cursor-none group rounded-full border-milk/40 border-2 p-1 flex justify-center">
-          <div className="w-0.5 animate-bounce h-1 group-hover:h-2 common-transition bg-light-yellow"></div>
-        </div>
-      </Link>
-      <div className="w-0.5 h-10 bg-light-yellow"></div>
-      <div className="h-16 flex items-center justify-center">
-        <Link href={"/#about"}>
-          <div className="text-xs cursor-none w-fit text-milk/40 rotate-[270deg]">
-            SCROLL
-          </div>
-        </Link>
-      </div>
-      <div className="w-0.5 h-[calc(100%-23rem)] bg-light-yellow"></div>
-    </div>
-  );
-};
-
-const HeroSlider = () => {
-  const sliderRef = useRef<Slider>(null);
-
-  return (
-    <section className="w-full">
-      <Slider ref={sliderRef} {...heroSliderSettings}>
-        {heroSectionIconsArray.map((curIcon, i) => (
-          <div
-            key={curIcon.title}
-            className={`!flex !flex-col !items-center !justify-center text-milk/20 text-3xl md:text-4xl`}
-          >
-            <p className="">{curIcon.icon}</p>
-            <p className="text-xs">{curIcon.title}</p>
-          </div>
-        ))}
-      </Slider>
-    </section>
-  );
-};
+export default HeroSection;

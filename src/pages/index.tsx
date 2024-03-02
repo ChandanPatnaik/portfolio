@@ -4,7 +4,7 @@ import {
   Contact,
   Experience,
   Expertise,
-  Hero,
+  HeroSection,
   IconRain,
   Projects,
   Skills,
@@ -64,7 +64,7 @@ export default function Home() {
                 transition={{ duration: 0.7 }}
                 className="bg-[url('/hero-bg.webp')] bg-no-repeat bg-cover h-[90vh] md:h-screen"
               >
-                <Hero />
+                <HeroSection />
               </motion.section>
               <Skills />
               <Expertise />
