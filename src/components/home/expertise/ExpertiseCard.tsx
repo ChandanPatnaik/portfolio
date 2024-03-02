@@ -1,6 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
-import { expertiseData } from "@/locals";
 import { motion } from "framer-motion";
+import { expertiseData } from "./ExpertiseSection";
 
 const ExpertiseCard = ({
   curExpertise,
