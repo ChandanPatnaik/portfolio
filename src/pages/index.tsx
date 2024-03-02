@@ -3,11 +3,11 @@ import {
   About,
   Contact,
   Experience,
-  Expertise,
+  ExpertiseSection,
   HeroSection,
-  IconRain,
   Projects,
   SkillSection,
+  TrackSection,
 } from "@/components/home";
 import { PublicLayout } from "@/components/layouts";
 import { AnimatePresence } from "framer-motion";
@@ -49,12 +49,12 @@ export default function Home() {
               </div>
               <HeroSection />
               <SkillSection />
-              <Expertise />
+              <ExpertiseSection />
               <Experience />
               <Projects />
               <About />
               <Contact />
-              <IconRain />
+              <TrackSection />
             </div>
           </PublicLayout>
         )}

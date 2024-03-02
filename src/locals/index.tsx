@@ -262,34 +262,6 @@ export const projectLists = [
   // },
 ];
 
-// expertise data
-export const expertiseData = [
-  {
-    heading: <div>Software Development</div>,
-    description:
-      "Experienced in both function and OOP: Javascript, Typescript, Python",
-    icon: <CiDesktop />,
-    image: "/images/software.avif",
-    class: "bg-dark-slate/20",
-  },
-  {
-    heading: <div>Frontend Dev React, NextJS</div>,
-    description:
-      "Over 2 years of development experience in React, NextJS and Other frontend libraries.",
-    icon: <FaReact />,
-    image: "/images/backend.png",
-    class: "bg-light-sky/40",
-  },
-  {
-    heading: <div>Backend Dev Node, Express</div>,
-    description:
-      "Experienced in crafting efficient cross-platform backends using Node.js and Express.",
-    icon: <SiExpress />,
-    image: "/images/frontend.png",
-    class: "bg-light-yellow/20",
-  },
-];
-
 export const socialIconList = [
   {
     icon: <FiGithub />,
@@ -305,5 +277,36 @@ export const socialIconList = [
     icon: <BiLogoGmail />,
     link: "mailto:chandanpatnaik81@gmail.com",
     color: "bg-orange-600 text-white",
+  },
+];
+
+// expertise data
+export const expertiseData = [
+  {
+    heading: <div>Software Development</div>,
+    description:
+      "Experienced in both function and OOP: Javascript, Typescript, Python",
+    icon: <CiDesktop />,
+    image: "/images/software.avif",
+    class: "bg-milk/10",
+    outerClass: "bg-milk/20",
+  },
+  {
+    heading: <div>Frontend Dev React, NextJS</div>,
+    description:
+      "Over 2 years of development experience in React, NextJS and Other frontend libraries.",
+    icon: <FaReact />,
+    image: "/images/backend.png",
+    class: "bg-light-sky/30",
+    outerClass: "bg-light-sky/40",
+  },
+  {
+    heading: <div>Backend Dev Node, Express</div>,
+    description:
+      "Experienced in crafting efficient cross-platform backends using Node.js and Express.",
+    icon: <SiExpress />,
+    image: "/images/frontend.png",
+    class: "bg-light-yellow/20",
+    outerClass: "bg-light-yellow/30",
   },
 ];

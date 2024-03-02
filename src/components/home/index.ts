@@ -1,8 +1,8 @@
 export { default as About } from "./About";
 export { default as Contact } from "./Contact";
 export { default as Experience } from "./Experience";
-export { default as Expertise } from "./Expertise";
-export { default as IconRain } from "./IconRain";
 export { default as Projects } from "./Projects";
+export { ExpertiseSection } from "./expertise";
 export { HeroSection } from "./hero";
 export { SkillSection } from "./skills";
+export { TrackSection } from "./track";

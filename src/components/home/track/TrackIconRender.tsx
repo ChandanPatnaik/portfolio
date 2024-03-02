@@ -1,4 +1,3 @@
-/* eslint-disable @next/next/no-img-element */
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
@@ -16,9 +15,8 @@ import {
   SiTypescript,
 } from "react-icons/si";
 
-const IconRain = () => {
+const TrackIconRender = () => {
   const [icons, setIcons] = useState<JSX.Element[]>([]);
-
   useEffect(() => {
     const interval = setInterval(() => {
       const randomIcon = Math.floor(Math.random() * 11);
@@ -73,42 +71,25 @@ const IconRain = () => {
         return null;
     }
   };
-
   return (
-    <section className="bg-dark-slate">
-      <div className="w-full scroll-mt-16 md:scroll-m-10 relative flex items-center justify-center overflow-hidden main-container">
-        <div className="w-full md:w-4/5 lg:w-2/3 h-[10vh] flex items-center relative">
-          <TimeLine />
-          <div className="pl-6 opacity-70 text-base md:text-2xl w-full h-full overflow-hidden relative">
-            {icons}
-            <div className="md:text-lg opacity-100 absolute left-0 right-0 text-center w-full bottom-0 text-white/30">
-              <div className="w-full items-center justify-center flex">
-                <div className="w-fit h-fit translate-y-10 md:translate-y-12">
-                  <motion.img
-                    src="/images/car.png"
-                    alt=""
-                    className="w-32 md:w-40"
-                    animate={{
-                      x: [10, 7, 5, 1, 4, 3, 2, 1, 3, 5, 7, 9],
-                    }}
-                    transition={{ duration: 3, repeat: Infinity }}
-                  />
-                </div>
-              </div>
-            </div>
+    <div className="pl-6 opacity-70 text-base md:text-2xl w-full h-full overflow-hidden relative">
+      {icons}
+      <div className="md:text-lg opacity-100 absolute left-0 right-0 text-center w-full bottom-0 text-white/30">
+        <div className="w-full items-center justify-center flex">
+          <div className="w-fit h-fit translate-y-10 md:translate-y-12">
+            <motion.img
+              src="/images/car.png"
+              alt=""
+              className="w-32 md:w-40"
+              animate={{
+                x: [10, 7, 5, 1, 4, 3, 2, 1, 3, 5, 7, 9],
+              }}
+              transition={{ duration: 3, repeat: Infinity }}
+            />
           </div>
         </div>
       </div>
-    </section>
-  );
-};
-
-export default IconRain;
-
-const TimeLine = () => {
-  return (
-    <div className="absolute flex flex-col items-center top-0 left-0 h-[400%] w-4">
-      <div className="w-0.5 h-full bg-light-yellow"></div>
     </div>
   );
 };
+export default TrackIconRender;
