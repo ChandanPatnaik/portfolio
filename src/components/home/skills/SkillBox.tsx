@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { AWS, Bracket, Firebase, Node, VsCode } from "@/assets/logos";
 import { motion } from "framer-motion";
 import { BiLogoPostgresql } from "react-icons/bi";
 import { DiMongodb } from "react-icons/di";
@@ -42,13 +43,9 @@ const LeftSkillSection = () => {
         exit={{ y: 200 }}
         className="h-60 right-0 text-white/70 flex-col flex md:hidden overflow-hidden text-xl col-span-5 bg-light-sky/10 rounded-lg"
       >
+        <img src={Node.src} alt="" className="w-full h-[7.5rem] object-cover" />
         <img
-          src="/images/node.webp"
-          alt=""
-          className="w-full h-[7.5rem] object-cover"
-        />
-        <img
-          src="/images/brackets.webp"
+          src={Bracket.src}
           alt=""
           className="w-full h-[7.5rem] object-cover"
         />
@@ -109,12 +106,12 @@ const LeftSkillSection = () => {
           </div>
           <div className="h-60 right-0 text-white/70 flex-col hidden md:flex overflow-hidden text-xl w-1/2 bg-light-sky/10 rounded-lg">
             <img
-              src="/images/node.webp"
+              src={Node.src}
               alt=""
               className="w-full h-[7.5rem] object-cover"
             />
             <img
-              src="/images/brackets.webp"
+              src={Bracket.src}
               alt=""
               className="w-full h-[7.5rem] object-cover"
             />
@@ -233,11 +230,7 @@ const BottomSection = () => {
         exit={{ y: 80 }}
         className="col-span-6 md:col-span-4 lg:col-span-2 overflow-hidden rounded-lg"
       >
-        <img
-          src="/images/vscode.webp"
-          alt=""
-          className="w-full h-36 object-cover"
-        />
+        <img src={VsCode.src} alt="" className="w-full h-36 object-cover" />
       </motion.div>
       <motion.div
         viewport={{ once: true }}
@@ -245,7 +238,7 @@ const BottomSection = () => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         exit={{ y: 80 }}
-        className="bg-light-sky/10 relative bg-opacity-90 p-3 col-span-full md:col-span-5 lg:col-span-4 h-40 md:h-full flex items-center justify-center rounded-lg overflow-hidden"
+        className="bg-light-sky/10 relative bg-opacity-90 p-3 col-span-full md:col-span-5 lg:col-span-3 h-40 md:h-full flex items-center justify-center rounded-lg overflow-hidden"
       >
         <div className="absolute top-2 text-3xl md:text-4xl font-semibold text-milk/5 left-1">
           Docker
@@ -269,12 +262,12 @@ const BottomSection = () => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         exit={{ y: 80 }}
-        className="col-span-6 md:col-span-3 lg:col-span-2 overflow-hidden rounded-lg w-full"
+        className="col-span-6 p-3 h-36 bg-[#1A73E8]/80 md:col-span-3 lg:col-span-2 overflow-hidden rounded-lg w-full"
       >
         <img
-          src="/images/firebase.png"
+          src={Firebase.src}
           alt=""
-          className="w-full h-36  object-cover md:object-contain"
+          className="w-full h-full object-contain"
         />
       </motion.div>
       <motion.div
@@ -283,13 +276,9 @@ const BottomSection = () => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.6 }}
         exit={{ y: 80 }}
-        className="col-span-6 md:col-span-3 lg:col-span-2 overflow-hidden rounded-lg w-full bg-white opacity-70"
+        className="col-span-6 md:col-span-3 lg:col-span-3 overflow-hidden rounded-lg w-full bg-white opacity-70"
       >
-        <img
-          src="/images/aws.png"
-          alt=""
-          className="w-full h-36 object-contain"
-        />
+        <img src={AWS.src} alt="" className="w-full h-36 object-cover" />
       </motion.div>
     </motion.div>
   );
