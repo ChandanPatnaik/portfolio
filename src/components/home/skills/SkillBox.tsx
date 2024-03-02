@@ -252,17 +252,6 @@ const BottomSection = () => {
         viewport={{ once: true }}
         initial={{ y: 80 }}
         whileInView={{ y: 0 }}
-        transition={{ duration: 0.5, delay: 0.6 }}
-        exit={{ y: 80 }}
-        className="col-span-6 md:col-span-3 lg:col-span-3 flex items-center justify-center bg-stone-700 overflow-hidden rounded-lg w-full"
-      >
-        <img src={AWS.src} alt="" className="w-32 object-contain" />
-      </motion.div>
-
-      <motion.div
-        viewport={{ once: true }}
-        initial={{ y: 80 }}
-        whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.5 }}
         exit={{ y: 80 }}
         className="col-span-6 md:col-span-3 lg:col-span-2 opacity-80 text-white text-8xl bg-gradient-to-b from-dark-slate to-dark-blue border border-light-sky/10 flex items-center justify-center rounded-lg overflow-hidden"
@@ -319,6 +308,17 @@ const BottomSection = () => {
           alt=""
           className="w-full h-full object-contain opacity-90"
         />
+      </motion.div>
+
+      <motion.div
+        viewport={{ once: true }}
+        initial={{ y: 80 }}
+        whileInView={{ y: 0 }}
+        transition={{ duration: 0.5, delay: 0.6 }}
+        exit={{ y: 80 }}
+        className="col-span-6 md:col-span-3 lg:col-span-3 flex items-center justify-center bg-stone-700 overflow-hidden rounded-lg w-full"
+      >
+        <img src={AWS.src} alt="" className="w-32 object-contain" />
       </motion.div>
     </div>
   );
