@@ -1,12 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { CustomDialog, CustomInput } from "@/components/core";
 import { database } from "@/configs/firebase.config";
 import { socialIconList } from "@/locals";
 import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";
-import { motion } from "framer-motion";
 import { useState } from "react";
 import * as Yup from "yup";
-import { CustomDialog, CustomInput } from "../core";
 
 type ValueProps =
   | {
@@ -17,101 +16,7 @@ type ValueProps =
   | {
       [key: string]: string;
     };
-
-const Contact = () => {
-  return (
-    <section className=" bg-dark-slate shadow-[0_0_76px_0_rgba(10,7,22,0.004)]">
-      <div
-        id="contact"
-        className="w-full flex items-center justify-center overflow-hidden main-container"
-      >
-        <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center relative">
-          <TimeLine />
-          <div className="py-8 md:py-12 flex flex-col gap-6 md:gap-8 w-full relative pl-6 md:pl-8">
-            <div className="text-base font-light text-white/60 tracking-wide">{`Contact />`}</div>
-            <div className="w-full grid-cols-1 md:grid-cols-5 grid lg:grid-cols-11 gap-y-6 md:gap-6 items-center">
-              <ContactDetails />
-              <ContactUsForm />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-};
-export default Contact;
-
-const TimeLine = () => {
-  return (
-    <div className="absolute flex flex-col items-center top-0 left-0 h-[400%] w-4">
-      <div className="w-0.5 h-10 md:h-14 bg-light-yellow"></div>
-      <div className="w-2 h-2 border border-light-yellow rounded-full bg-transparent"></div>
-      <div className="w-0.5 h-[calc(100%-4rem)] bg-light-yellow"></div>
-    </div>
-  );
-};
-
-const ContactDetails = () => {
-  return (
-    <div className="w-full flex flex-col gap-6 md:gap-8 md:col-span-6">
-      <div className="font-bold text-3xl md:text-4xl flex flex-col gap-0 md:gap-2 tracking-wider text-milk">
-        <p className="">
-          {`Let's find`.split("").map((curStr, i) => (
-            <motion.span
-              viewport={{ once: true }}
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.7, delay: i * 0.07 }}
-              exit={{ scale: 0, opacity: 0 }}
-              key={i}
-            >
-              {curStr}
-            </motion.span>
-          ))}
-        </p>
-        <p className="">
-          {`solution`.split("").map((curStr, i) => (
-            <motion.span
-              viewport={{ once: true }}
-              initial={{ scale: 0, opacity: 0 }}
-              whileInView={{ scale: 1, opacity: 1 }}
-              transition={{ duration: 0.7, delay: i * 0.07 + 0.7 }}
-              exit={{ scale: 0, opacity: 0 }}
-              key={i}
-            >
-              {curStr}
-            </motion.span>
-          ))}
-        </p>
-        <motion.p
-          viewport={{ once: true }}
-          initial={{ y: 20 }}
-          whileInView={{ y: 0 }}
-          transition={{ duration: 0.7, delay: 0.7 }}
-          exit={{ y: 20 }}
-          className="text-red-500"
-        >{`together?`}</motion.p>
-      </div>
-
-      <div className="text-milk/60 md:text-lg ">
-        <p className="leading-6 md:leading-7">
-          Fill in the form or just use my contacts below. If you need to put a
-          project on the move, let’s work on it!
-        </p>
-      </div>
-
-      <a
-        href="mailto:chandanpatnaik81@gmail.com"
-        target="_blank"
-        className="text-milk tracking-wide hover:tracking-widest w-fit common-transition"
-      >
-        chandanpatnaik81@gmail.com
-      </a>
-    </div>
-  );
-};
-
-const ContactUsForm = () => {
+const ContactForm = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const contactSchema = [
@@ -294,3 +199,5 @@ const ContactUsForm = () => {
     </section>
   );
 };
+
+export default ContactForm;

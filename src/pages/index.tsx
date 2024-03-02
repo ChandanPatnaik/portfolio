@@ -1,7 +1,7 @@
-import { Loader, SocialIconList } from "@/components/common";
+import { Loader, SeoContent, SocialIconList } from "@/components/common";
 import {
   About,
-  Contact,
+  ContactSection,
   ExperienceSection,
   ExpertiseSection,
   HeroSection,
@@ -11,12 +11,10 @@ import {
 } from "@/components/home";
 import { PublicLayout } from "@/components/layouts";
 import { AnimatePresence } from "framer-motion";
-import Head from "next/head";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
-
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 2000);
     return () => clearTimeout(timer);
@@ -24,20 +22,7 @@ export default function Home() {
 
   return (
     <section className="w-full">
-      <Head>
-        <title>Chandan Patnaik | Full Stack Web Developer</title>
-        <meta
-          name="description"
-          content="Full stack Web developer passionate about creating web applications with a focus on user experience."
-        />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta property="og:type" content="website" />
-        <meta
-          property="og:image"
-          content="https://chandan-patnaik.vercel.app/og-image.png"
-        />
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
+      <SeoContent />
       <AnimatePresence mode="wait">
         {isLoading ? (
           <Loader />
@@ -53,7 +38,7 @@ export default function Home() {
               <ExperienceSection />
               <Projects />
               <About />
-              <Contact />
+              <ContactSection />
               <TrackSection />
             </div>
           </PublicLayout>
