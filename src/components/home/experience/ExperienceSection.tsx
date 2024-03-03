@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { ProjectBg } from "@/assets/utility";
 import { experienceData } from "@/locals";
 import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
@@ -7,15 +8,15 @@ import ExperienceTimeLine from "./ExperienceTimeLine";
 const ExperienceSection = () => {
   return (
     <section className="bg-dark-blue overflow-hidden relative">
-      <div className="absolute right-10 rotate-90">
+      <div className="absolute right-0 flex items-center justify-end">
         <motion.img
           animate={{
             x: [30, 40, 30],
             y: [30, 40, 30],
           }}
-          src="https://github.githubassets.com/assets/shape-2-f30dcc9bd35c.svg"
+          src={ProjectBg.src}
           alt=""
-          className="w-full h-full object-contain"
+          className="w-1/2 h-full object-contain"
           transition={{ duration: 8, repeat: Infinity }}
         />
       </div>

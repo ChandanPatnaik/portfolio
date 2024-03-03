@@ -1,3 +1,4 @@
+import { Car } from "@/assets/utility";
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
 import {
@@ -78,7 +79,7 @@ const TrackIconRender = () => {
         <div className="w-full items-center justify-center flex">
           <div className="w-fit h-fit translate-y-10 md:translate-y-12">
             <motion.img
-              src="/images/car.png"
+              src={Car.src}
               alt=""
               className="w-32 md:w-40"
               animate={{
