@@ -1,10 +1,24 @@
+/* eslint-disable @next/next/no-img-element */
 import { experienceData } from "@/locals";
+import { motion } from "framer-motion";
 import ExperienceCard from "./ExperienceCard";
 import ExperienceTimeLine from "./ExperienceTimeLine";
 
 const ExperienceSection = () => {
   return (
-    <section className="bg-dark-blue">
+    <section className="bg-dark-blue overflow-hidden relative">
+      <div className="absolute right-10 rotate-90">
+        <motion.img
+          animate={{
+            x: [30, 40, 30],
+            y: [30, 40, 30],
+          }}
+          src="https://github.githubassets.com/assets/shape-2-f30dcc9bd35c.svg"
+          alt=""
+          className="w-full h-full object-contain"
+          transition={{ duration: 8, repeat: Infinity }}
+        />
+      </div>
       <div className="w-full scroll-m-10 relative flex items-center justify-center overflow-hidden main-container">
         <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center relative">
           <ExperienceTimeLine />
@@ -12,7 +26,7 @@ const ExperienceSection = () => {
             <div className="text-base font-light text-white/60 tracking-wide">{`Experience />`}</div>
             <div className="w-full flex flex-col gap-10">
               {experienceData.map((curExp, i) => (
-                <ExperienceCard curExp={curExp} key={i} />
+                <ExperienceCard curExp={curExp} key={i} index={i} />
               ))}
             </div>
           </div>
