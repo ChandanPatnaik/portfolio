@@ -39,9 +39,9 @@ const LeftSkillSection = () => {
         whileInView={{ y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
         exit={{ y: 200 }}
-        className="text-8xl flex-col flex items-center justify-center col-span-5 md:col-span-3 h-60 rounded-lg bg-gradient-to-b from-rose-700 to-red-200/10"
+        className="text-8xl flex-col flex items-center justify-center col-span-5 md:col-span-3 h-60 rounded-lg group bg-gradient-to-b hover:to-red-200/20 common-transition from-rose-700 to-red-200/10"
       >
-        <TbBrandFramerMotion />
+        <TbBrandFramerMotion className="group-hover:scale-105 common-transition" />
         <p className="text-lg px-2 text-center">Framer Motion</p>
       </motion.div>
 
@@ -72,22 +72,78 @@ const LeftSkillSection = () => {
       >
         <div className=" text-white/70 w-full p-3 h-44 md:h-36 bg-light-sky/10 rounded-lg">
           <div className="w-full items-center flex">
-            <div className="w-10 h-1 bg-white/20"></div>
-            <div className="w-11 text-light-yellow flex items-center justify-center h-11 rounded-full bg-white/10">
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ width: 0 }}
+              whileInView={{ width: 30 }}
+              transition={{ duration: 0.2, delay: 0.2 }}
+              exit={{ width: 0 }}
+              className=" h-1 bg-white/20"
+            ></motion.div>
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.2, delay: 0.4 }}
+              exit={{ scale: 0 }}
+              className="w-11 text-light-yellow flex items-center justify-center h-11 rounded-full bg-white/10"
+            >
               <IoLogoJavascript />
-            </div>
-            <div className="w-4 h-1 bg-white/20"></div>
-            <div className="col-span-2 w-11 text-[#007acc] flex items-center justify-center h-11 rounded-full bg-white/10">
+            </motion.div>
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ width: 0 }}
+              whileInView={{ width: 18 }}
+              transition={{ duration: 0.2, delay: 0.6 }}
+              exit={{ width: 0 }}
+              className="h-1 bg-white/20"
+            ></motion.div>
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.2, delay: 0.8 }}
+              exit={{ scale: 0 }}
+              className="col-span-2 w-11 text-[#007acc] flex items-center justify-center h-11 rounded-full bg-white/10"
+            >
               <SiTypescript />
-            </div>
-            <div className="w-4 h-1 bg-white/20"></div>
-            <div className="col-span-2 w-11 text-xl text-[#00ed64] flex items-center justify-center h-11 rounded-full bg-white/10">
+            </motion.div>
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ width: 0 }}
+              whileInView={{ width: 18 }}
+              transition={{ duration: 0.2, delay: 1 }}
+              exit={{ width: 0 }}
+              className="h-1 bg-white/20"
+            ></motion.div>
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.2, delay: 1.2 }}
+              exit={{ scale: 0 }}
+              className="col-span-2 w-11 text-xl text-[#00ed64] flex items-center justify-center h-11 rounded-full bg-white/10"
+            >
               <DiMongodb />
-            </div>
-            <div className="w-4 h-1 bg-white/20"></div>
-            <div className="col-span-2 w-11 text-[#31648c] text-xl flex items-center justify-center h-11 rounded-full bg-white/10">
+            </motion.div>
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ width: 0 }}
+              whileInView={{ width: 18 }}
+              transition={{ duration: 0.3, delay: 1.4 }}
+              exit={{ width: 0 }}
+              className="w-4 h-1 bg-white/20"
+            ></motion.div>
+            <motion.div
+              viewport={{ once: true }}
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              transition={{ duration: 0.3, delay: 1.6 }}
+              exit={{ scale: 0 }}
+              className="col-span-2 w-11 text-[#31648c] text-xl flex items-center justify-center h-11 rounded-full bg-white/10"
+            >
               <BiLogoPostgresql />
-            </div>
+            </motion.div>
           </div>
           <p className="text-lg font-bold">Languages & Libraries</p>
           <p className="text-sm md:text-xs pt-1">
@@ -114,7 +170,11 @@ const LeftSkillSection = () => {
             <FaNodeJs className="text-4xl" />
             <p className="text-sm">Node.js</p>
           </div>
-          <div className="h-60 right-0 text-white/70 flex-col hidden md:flex overflow-hidden text-xl w-1/2 bg-light-sky/10 rounded-lg">
+          <div className="h-60 right-0 relative group text-white/70 flex-col hidden md:flex overflow-hidden text-xl w-1/2 bg-light-sky/10 rounded-lg">
+            <div className="absolute group-hover:visible z-20 invisible w-full h-full bg-dark-slate/60 backdrop-blur-sm common-transition !duration-200 opacity-0 group-hover:opacity-100 inset-0 text-milk p-3 text-base">
+              {`The choice between Express.js and Nest.js depends on the project's
+              specific requirements and intricacies.`}
+            </div>
             <img
               src={Node.src}
               alt=""
