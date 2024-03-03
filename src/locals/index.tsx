@@ -144,6 +144,41 @@ export const heroSliderSettings = {
   ],
 };
 
+// hero section slider configuration
+export const projectSliderSettings = {
+  dots: false,
+  infinite: true,
+  slidesToShow: 5.5,
+  slidesToScroll: 1,
+  autoplay: true,
+  speed: 10000,
+  cssEase: "linear",
+  autoplaySpeed: 0,
+  pauseOnHover: false,
+  arrows: false,
+  ltr: true,
+  responsive: [
+    {
+      breakpoint: 1024,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 600,
+      settings: {
+        slidesToShow: 4,
+      },
+    },
+    {
+      breakpoint: 480,
+      settings: {
+        slidesToShow: 3,
+      },
+    },
+  ],
+};
+
 // skill section slider configuration
 export const skillSliderSettings = {
   dots: false,
