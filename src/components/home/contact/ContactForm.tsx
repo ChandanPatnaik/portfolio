@@ -1,10 +1,13 @@
 /* eslint-disable @next/next/no-img-element */
 
+import { Success } from "@/assets/utility";
 import { CustomDialog, CustomInput } from "@/components/core";
 import { database } from "@/configs/firebase.config";
-import { socialIconList } from "@/locals";
 import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";
 import { useState } from "react";
+import { BiLogoGmail } from "react-icons/bi";
+import { FaLinkedinIn } from "react-icons/fa6";
+import { FiGithub } from "react-icons/fi";
 import * as Yup from "yup";
 
 type ValueProps =
@@ -16,6 +19,25 @@ type ValueProps =
   | {
       [key: string]: string;
     };
+
+const socialIconList = [
+  {
+    icon: <FiGithub />,
+    link: "https://github.com/ChandanPatnaik",
+    color: "bg-blue-600 text-white",
+  },
+  {
+    icon: <FaLinkedinIn />,
+    link: "https://www.linkedin.com/in/chandan-patnaik/",
+    color: "bg-blue-400 text-white",
+  },
+  {
+    icon: <BiLogoGmail />,
+    link: "mailto:chandanpatnaik81@gmail.com",
+    color: "bg-orange-600 text-white",
+  },
+];
+
 const ContactForm = () => {
   const [openDialog, setOpenDialog] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
@@ -104,7 +126,7 @@ const ContactForm = () => {
       >
         <div className="px-3 py-5 md:p-8 bg-dark-slate/80 flex w-full gap-2 md:gap-4 items-center justify-center flex-col">
           <div className="w-fit h-fit">
-            <img src="/success.gif" className="w-24 md:w-40" alt="success" />
+            <img src={Success.src} className="w-24 md:w-40" alt="success" />
           </div>
           <h1 className="text-xl md:text-3xl font-semibold text-milk/90">
             Thank You.

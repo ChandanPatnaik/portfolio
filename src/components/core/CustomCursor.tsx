@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 // components/CustomCursor.js
+import { Giphy } from "@/assets/utility";
 import { useTorch } from "@/hooks";
 import { useEffect, useState } from "react";
 
@@ -32,7 +33,7 @@ const CustomCursor = () => {
       >
         {isTorchOn ? (
           <div className="w-16 h-16 overflow-hidden rounded-full">
-            <img src="/giphy.gif" alt="" className="w-full h-full" />
+            <img src={Giphy.src} alt="" className="w-full h-full" />
           </div>
         ) : (
           <div

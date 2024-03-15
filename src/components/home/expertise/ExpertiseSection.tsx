@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+import { Code } from "@/assets/utility";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { CiDesktop } from "react-icons/ci";
@@ -58,7 +59,7 @@ const ExpertiseSection = () => {
             onViewportEnter={() => setIsInView(true)}
             className=""
           >
-            <img src="/code.png" alt="" className="w-full" />
+            <img src={Code.src} alt="" className="w-full" />
           </motion.div>
         </div>
         <div className="w-full md:w-4/5 lg:w-2/3 h-full flex items-center relative">
