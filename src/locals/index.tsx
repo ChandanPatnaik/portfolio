@@ -233,7 +233,7 @@ export const skillSectionIconsArray = [
 // experience data
 export const experienceData = [
   {
-    role: "Full Stack Web Developer",
+    role: "Software Developer",
     company: "SearchingYard Group",
     companySite: "https://www.searchingyard.com/",
     description:
@@ -255,7 +255,7 @@ export const experienceData = [
     ],
   },
   {
-    role: "Frontend Developer Intern",
+    role: "Software Developer Intern",
     company: "SearchingYard Group",
     companySite: "https://www.searchingyard.com/",
     description:
