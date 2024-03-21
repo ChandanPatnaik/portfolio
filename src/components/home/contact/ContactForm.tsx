@@ -2,7 +2,7 @@
 
 import { Success } from "@/assets/utility";
 import { CustomDialog, CustomInput } from "@/components/core";
-import { database } from "@/configs/firebase.config";
+import { configs } from "@/configs";
 import { Field, FieldProps, Form, Formik, FormikHelpers } from "formik";
 import { useState } from "react";
 import { BiLogoGmail } from "react-icons/bi";
@@ -100,12 +100,23 @@ const ContactForm = () => {
   ) => {
     try {
       setIsLoading(true);
-      await database.push("query", {
-        ...values,
+
+      const res = await fetch(`${configs.server_url}/queries/create`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          ...values,
+        }),
       });
-      setIsLoading(false);
-      props.resetForm();
-      setOpenDialog(true);
+      const result = await res.json();
+      console.log(result);
+      if (result?.success) {
+        setIsLoading(false);
+        props.resetForm();
+        setOpenDialog(true);
+      }
     } catch (error) {
       setIsLoading(false);
     }
