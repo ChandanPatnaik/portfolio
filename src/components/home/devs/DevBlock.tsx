@@ -2,33 +2,12 @@ const AboutBlock = () => {
   return (
     <section className="hidden md:flex flex-col relative">
       <div className="w-fit h-full absolute top-0 -left-10 md:-left-16">
-        <div className="flex flex-col text-milk/30 tracking-wide leading-6 text-sm">
-          <p className="">01</p>
-          <p>02</p>
-          <p>03</p>
-          <p>04</p>
-          <p>05</p>
-          <p>06</p>
-          <p>07</p>
-          <p>08</p>
-          <p>09</p>
-          <p>10</p>
-          <p>11</p>
-          <p>12</p>
-          <p>13</p>
-          <p>14</p>
-          <p>15</p>
-          <p>16</p>
-          <p>17</p>
-          <p>18</p>
-          <p>19</p>
-          <p>20</p>
-          <p>21</p>
-          <p>22</p>
-          <p>23</p>
-          <p>24</p>
-          <p>25</p>
-          <p>26</p>
+        <div className="flex flex-col text-milk/30 tracking-wide gap-[0.3px] leading-6 text-sm">
+          {Array.from(Array(27).keys()).map((index) => (
+            <p className="font-medium text-base" key={index}>
+              {index + 1 > 9 ? `${index + 1}` : `0${index + 1}`}
+            </p>
+          ))}
         </div>
       </div>
 
